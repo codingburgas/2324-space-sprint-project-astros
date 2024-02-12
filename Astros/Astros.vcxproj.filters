@@ -21,7 +21,7 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game1.cpp">
+    <ClCompile Include="Quiz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game2.cpp">
@@ -30,18 +30,24 @@
     <ClCompile Include="Game3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QuizFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game1.h">
+    <ClInclude Include="Questions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="QuizFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

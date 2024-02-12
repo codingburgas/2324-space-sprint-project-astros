@@ -129,15 +129,17 @@
   <ItemGroup>
     <ClCompile Include="Astros.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Game1.cpp" />
+    <ClCompile Include="Quiz.cpp" />
     <ClCompile Include="Game2.cpp" />
     <ClCompile Include="Game3.cpp" />
+    <ClCompile Include="QuizFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game1.h" />
+    <ClInclude Include="Questions.h" />
     <ClInclude Include="Game2.h" />
     <ClInclude Include="Game3.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="QuizFunctions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
