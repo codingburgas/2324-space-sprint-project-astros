@@ -21,7 +21,7 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Quiz.cpp">
+    <ClCompile Include="Game1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game2.cpp">
@@ -30,7 +30,10 @@
     <ClCompile Include="Game3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="QuizFunctions.cpp">
+    <ClCompile Include="Quiz1Functions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,7 +41,7 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Questions.h">
+    <ClInclude Include="QuestionsGame1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Game2.h">
@@ -47,7 +50,13 @@
     <ClInclude Include="Game3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuizFunctions.h">
+    <ClInclude Include="Quiz1Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

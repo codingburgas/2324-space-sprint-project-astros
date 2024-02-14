@@ -1,11 +1,12 @@
 #include <iostream>
-#include "Questions.h"
-#include "QuizFunctions.h"
+#include "Game1.h"
+#include "QuestionsGame1.h"
+#include "Quiz1Functions.h"
+#include "GlobalFunctions.h"
 using namespace std;
 
-
-int main() {
+void playGame1() {
+    PrintGame1Header();
     int score = makeQuiz();
     cout << "You scored " << score << " out of " << NUM_QUESTIONS << "." << endl;
-    return 0;
 }

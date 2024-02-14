@@ -1,7 +1,19 @@
-#include "QuizFunctions.h"
-#include "Questions.h"
+#include "Quiz1Functions.h"
+#include "QuestionsGame1.h"
+#include "GlobalFunctions.h"
 #include <iostream>
 using namespace std;
+
+void PrintGame1Header()
+{
+    ClearScreen();
+    PrintGame1Rules();
+}
+
+void PrintGame1Rules()
+{
+    cout << "Towa sa pravilata na igrata..." << endl;
+}
 
 int makeQuiz()
 {
@@ -22,7 +34,7 @@ int makeQuiz()
             cout << "Wrong. The correct answer is " << rightAnswers[i] + 1 << "." << endl;
         }
         system("pause");
-        system("cls");
+        PrintGame1Header();
     }
 
     return score;
