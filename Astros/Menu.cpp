@@ -8,7 +8,8 @@ using namespace std;
 
 void ShowMenu()
 {
-	ClearScreen();
+	clear();
+	PrintLogo();
 	cout << "Choose your game: 1, 2 or 3 " << endl;
 	cout << "1. Astronomy quiz: " << endl;
 	cout << "2. Neshto si drugo: " << endl;
@@ -26,7 +27,7 @@ void ShowMenu()
 			playGame3();
 		}
 		else {
-			cout << "Wrong choise! Please enter a number between 1 and 3";
+			cout << "Wrong choice! Please enter a number between 1 and 3";
 		}
 	} while (choise < 1 || choise > 3);
 }

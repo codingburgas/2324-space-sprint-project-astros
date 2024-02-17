@@ -1,12 +1,16 @@
 #include "Quiz1Functions.h"
 #include "QuestionsGame1.h"
 #include "GlobalFunctions.h"
+#include "Quiz1Functions.h"
+#include "QuestionsGame1.h"
+#include "GlobalFunctions.h"
 #include <iostream>
 using namespace std;
 
 void PrintGame1Header()
 {
-    ClearScreen();
+    clear();
+    PrintLogo();
     PrintGame1Rules();
 }
 
