@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Astros.cpp" />
-    <ClCompile Include="Game2Functions.cpp" />
     <ClCompile Include="GlobalFunctions.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Game1.cpp" />

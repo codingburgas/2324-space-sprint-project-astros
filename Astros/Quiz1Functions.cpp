@@ -6,8 +6,7 @@ using namespace std;
 
 void PrintGame1Header()
 {
-    clear();
-    PrintLogo();
+    ClearScreen();
     PrintGame1Rules();
 }
 

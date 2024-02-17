@@ -1,8 +1,3 @@
 #pragma once
-#include <string>
-
-void clear();
-
+void ClearScreen();
 void PrintLogo();
-
-void centerText(std::string text);
