@@ -11,22 +11,22 @@ void ShowMenu()
 	ClearScreen();
 	cout << "Choose your game: 1, 2 or 3 " << endl;
 	cout << "1. Astronomy quiz: " << endl;
-	cout << "2. Neshto si drugo: " << endl;
+	cout << "2. Cosmic trivia: " << endl;
 	cout << "3. Neshto si treto: " << endl;
-	int choise;
+	int choice;
 	do {
-		cin >> choise;
-		if (choise == 1) {
+		cin >> choice;
+		if (choice == 1) {
 			playGame1();
 		}
-		else if (choise == 2) {
+		else if (choice == 2) {
 			playGame2();
 		}
-		else if (choise == 3) {
+		else if (choice == 3) {
 			playGame3();
 		}
 		else {
-			cout << "Wrong choise! Please enter a number between 1 and 3";
+			cout << "Wrong choice! Please enter a number between 1 and 3";
 		}
-	} while (choise < 1 || choise > 3);
+	} while (choice < 1 || choice > 3);
 }

@@ -3,13 +3,13 @@ const int NUM_QUESTIONS = 10;
 
 const char* const questions[NUM_QUESTIONS] = {
     "Largest planet in our solar system?",
-    "Time for Earth to orbit Sun?",
+    "Time it takes for Earth to orbit the Sun?",
     "What is a supernova?",
-    "Which planet is the 'Red Planet'?",
-    "Force keeping planets in orbit?",
+    "Which planet is the so called 'Red Planet'?",
+    "What do you call the force that is keeping planets in orbit?",
     "Which is NOT a type of galaxy?",
-    "Term for system of billions of stars?",
-    "Main difference between comet and asteroid?",
+    "Term for a system that consists of billions of stars?",
+    "What's the main difference between a comet and an asteroid?",
     "Closest celestial body to Earth?",
     "What causes a solar eclipse?"
 };
@@ -17,7 +17,7 @@ const char* const questions[NUM_QUESTIONS] = {
 const char* const answers[NUM_QUESTIONS][4] = {
     { "Earth", "Mars", "Jupiter", "Saturn" },
     { "24 hours", "365 days", "28 days", "12 years" },
-    { "A star that is getting formed.", "The explosion of a star at the end of its life cycle.", "A black hole swallowing a star.", "A comet passing by the Earth." },
+    { "A star that is being formed.", "The explosion of a star at the end of its life cycle.", "A black hole swallowing a star.", "A comet passing by the Earth." },
     { "Venus", "Mars", "Jupiter", "Mercury" },
     { "Magnetism", "Gravity", "Friction", "Electricity" },
     { "Elliptical", "Spiral", "Irregular", "Circular" },
