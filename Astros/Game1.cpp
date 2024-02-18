@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Menu.h"
 #include "Game1.h"
 #include "QuestionsGame1.h"
 #include "Quiz1Functions.h"
@@ -9,4 +10,6 @@ void playGame1() {
     PrintGame1Header();
     int score = makeQuiz();
     cout << "You scored " << score << " out of " << NUM_QUESTIONS << "." << endl;
+    cin.get();
+    ShowMenu();
 }

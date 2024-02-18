@@ -9,6 +9,9 @@ using namespace std;
 
 void PrintGame1Header()
 {
+    centerText("ASTRONOMY QUIZ\n");
+    centerText("Press Any Button To Continue");
+    cin.get();
     clear();
     PrintLogo();
     PrintGame1Rules();

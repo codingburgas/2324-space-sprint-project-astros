@@ -8,5 +8,5 @@ using namespace std;
 void playGame3()
 {
 	PrintIntro();
-	YourAnswer();
+	YourDecision();
 }

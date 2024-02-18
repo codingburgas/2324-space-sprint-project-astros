@@ -30,6 +30,9 @@
 	<ClCompile Include="Generalfacts.cpp">
 	  <Filter>Source Files</Filter>
 	</ClCompile>
+	<ClCompile Include="FactSheet.cpp">
+	  <Filter>Source Files</Filter>
+	</ClCompile>
     <ClCompile Include="Game3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -52,6 +55,9 @@
     </ClInclude>
 	<ClInclude Include="Generalfacts.h">
 	  <Filter>Header Files</Filter>
+	</ClInclude>
+	<ClInclude Include="FactSheet.h">
+      <Filter>Header Files</Filter>	  
 	</ClInclude>
     <ClInclude Include="Game3.h">
       <Filter>Header Files</Filter>
