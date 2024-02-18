@@ -8,7 +8,8 @@ using namespace std;
 
 void ShowMenu()
 {
-	ClearScreen();
+	clear();
+	PrintLogo();
 	cout << "Choose your game: 1, 2 or 3 " << endl;
 	cout << "1. Astronomy quiz: " << endl;
 	cout << "2. Cosmic trivia: " << endl;
