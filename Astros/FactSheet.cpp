@@ -316,8 +316,38 @@ void MarsFact() {
 	StandardFactCout(Mars, Fact);
 }
 
-void AsteroidFact() {
-	cout << "This is the Asteroid Belt" << endl;
+void AsteroidBeltFact() {
+	Asteroid++;
+
+	string Fact[10] = {
+		"The asteroid belt is a region of space located between the orbits of Mars and Jupiter.\n"
+		"It contains millions of rocky objects, called asteroids, ranging in size from tiny pebbles to several hundred miles in diameter.\n"
+		"The total mass of all the asteroids in the belt is estimated to be less than the mass of Earth's Moon.\n"
+		"The largest asteroid in the belt is Ceres, which is about 590 miles (940 kilometers) in diameter.\n"
+		"Ceres is so large that it is classified as a dwarf planet, making it the largest object in the asteroid belt.\n",
+		"The asteroid belt is not as densely packed as often depicted in science fiction; the average distance between asteroids is about 600,000 miles (1 million kilometers).\n"
+		"Most asteroids in the belt are composed of rocky and metallic materials, similar to the composition of Earth's crust.\n"
+		"Some asteroids in the belt contain water ice and organic compounds, raising the possibility that they could have delivered these materials to Earth in the past.\n"
+		"The asteroid belt is believed to be remnants of the early solar system that never accreted into a planet due to the gravitational influence of Jupiter.\n"
+		"Jupiter's powerful gravity prevented the formation of a planet in the asteroid belt by disrupting the gravitational accretion process.\n",
+		"The orbits of asteroids in the belt can be highly elliptical and inclined relative to the plane of the solar system.\n"
+		"Most asteroids in the belt have relatively stable orbits that keep them confined to the region between Mars and Jupiter.\n"
+		"However, some asteroids can have orbits that bring them close to Earth, posing a potential impact hazard.\n"
+		"The first asteroid, Ceres, was discovered by Italian astronomer Giuseppe Piazzi in 1801.\n"
+		"Ceres was initially classified as a planet but later reclassified as an asteroid when many similar objects were discovered in the same region.\n",
+		"The second asteroid, Pallas, was discovered by German astronomer Heinrich Wilhelm Olbers in 1802.\n"
+		"The asteroid belt is not a significant barrier to spacecraft traveling through the solar system; spacecraft can navigate through the belt with minimal risk of collision.\n"
+		"NASA's Dawn spacecraft visited two asteroids in the belt, Vesta and Ceres, providing valuable insights into their composition and geology.\n"
+		"The Dawn mission revealed that Vesta has a heavily cratered surface and a large impact basin known as Rheasilvia.\n"
+		"Ceres, on the other hand, has a more diverse surface with bright spots that may be deposits of water ice.\n",
+		"Some asteroids in the belt are classified as near-Earth asteroids (NEAs) because their orbits bring them close to Earth's orbit.\n"
+		"NASA and other space agencies closely monitor NEAs to assess their potential impact hazards and develop mitigation strategies.\n"
+		"Several spacecraft missions, such as OSIRIS-REx and Hayabusa2, have visited near-Earth asteroids to study their composition and collect samples.\n"
+		"Studying asteroids in the belt can provide valuable insights into the early solar system's formation and evolution.\n"
+		"Future missions to the asteroid belt may include asteroid mining and exploration for resources such as water and metals.\n"
+	};
+
+	StandardFactCout(Asteroid, Fact);
 }
 
 void JupiFact() {

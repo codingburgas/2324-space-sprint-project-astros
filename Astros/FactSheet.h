@@ -11,7 +11,7 @@ void MercFact();
 void VenFact();
 void EarthFact();
 void MarsFact();
-void AsteroidFact();
+void AsteroidBeltFact();
 void JupiFact();
 void SatFact();
 void UranFact();
