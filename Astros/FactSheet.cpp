@@ -7,6 +7,20 @@ using namespace std;
 
 int Sol = 0, Merc = 0, Ven = 0, Earth = 0, Mars = 0, Asteroid = 0, Jupi = 0, Sat = 0, Uran = 0, Nep = 0, Plu = 0;
 
+void StandardFactCout(int Planet, string Fact[]) {
+	for (int i = Planet - 1; i < Planet; i++) {
+		if (i == 10) {
+			cout << "There aren't any different facts to offer about the Sun." << endl;
+			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl;
+			Sol = 0;
+		}
+		else {
+			cout << Fact[i];
+			cout << endl;
+		}
+	}
+}
+
 void SolFact() {
 	Sol++;
 	
@@ -63,17 +77,7 @@ void SolFact() {
 		"The Sun has been revered by civilizations throughout history as a symbol of power, life, and divinity.\n"
 	};
 
-	for (int i = Sol - 1; i < Sol; i++) {
-		if (i == 10) {
-			cout << "There aren't any different facts to offer about the Sun." << endl;
-			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl;
-			Sol = 0;
-		}
-		else {
-			cout << Fact[i];
-			cout << endl;
-		}
-	}
+	StandardFactCout(Sol, Fact);
 }
 
 void MercFact() {
@@ -132,25 +136,70 @@ void MercFact() {
 		"Mercury's surface is covered in a layer of fine dust and rocks, known as regolith.\n" 
 	};
 
-	for (int i = Merc - 1; i < Merc; i++) {
-		if (i == 10) {
-			cout << "There aren't any different facts to offer about Mercury." << endl;
-			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl;
-			Sol = 0;
-		}
-		else {
-			cout << Fact[i];
-			cout << endl;
-		}
-	}
+	StandardFactCout(Merc, Fact);
 }
 
 void VenFact() {
-	cout << "This is Venus" << endl;
+	Ven++;
+
+	string Fact[10] = {
+		"Venus is the second planet from the Sun and is often called Earth's 'sister planet' due to their similar size and composition.\n"
+		"It is named after the Roman goddess of love and beauty.\n"
+		"Venus is sometimes referred to as the 'morning star' or the 'evening star' because it is visible from Earth during the morning and evening.\n"
+		"The planet has a thick atmosphere composed mainly of carbon dioxide with clouds of sulfuric acid, making it extremely inhospitable.\n"
+		"Surface temperatures on Venus are hot enough to melt lead, reaching up to 880 degrees Fahrenheit (471 degrees Celsius), making it the hottest planet in the solar system.\n",
+		"Despite being closer to the Sun than Mercury, Venus is not the hottest planet because its thick atmosphere traps heat.\n"
+		"Venus rotates in the opposite direction to most planets, with retrograde rotation, meaning its sun rises in the west and sets in the east.\n"
+		"A day on Venus is longer than its year, with a rotation period of about 243 Earth days and an orbital period of about 225 Earth days.\n"
+		"Venus has no moons and no rings.\n"
+		"Its surface is covered in volcanic features, including extensive lava flows, volcanic plains, and thousands of volcanoes.\n",
+		"The planet's surface is relatively young, with evidence of volcanic activity continuing into recent geological times.\n"
+		"Venus has the most volcanoes of any planet in the solar system, with over 1,600 major volcanoes or volcanic features.\n"
+		"The largest volcano on Venus, called Maat Mons, is about 5 miles (8 kilometers) high and 180 miles (300 kilometers) in diameter.\n"
+		"Venus has a surface gravity about 90% of Earth's, meaning objects would weigh slightly less there.\n"
+		"The planet has no magnetic field, which may contribute to its lack of a protective atmosphere.\n",
+		"Venus has been visited by several spacecraft, including the Soviet Venera missions and NASA's Magellan spacecraft.\n"
+		"The dense atmosphere of Venus prevents direct observations of its surface from space, requiring radar imaging to map its features.\n"
+		"The surface of Venus is dotted with impact craters, but due to volcanic activity, the number of craters is relatively low compared to other bodies in the solar system.\n"
+		"Venus' atmosphere experiences super-rotation, where winds at its cloud level circulate much faster than the planet rotates.\n"
+		"The atmospheric pressure on Venus is about 92 times that of Earth's, similar to the pressure found at a depth of about 3,000 feet (900 meters) in Earth's oceans.\n",
+		"Venus' thick atmosphere causes a greenhouse effect, trapping heat and making its surface extremely hot.\n"
+		"The planet's clouds are composed mainly of sulfuric acid droplets, with occasional lightning and thunder.\n"
+		"The dense clouds of Venus reflect about 70% of the sunlight that reaches them, making the planet very bright in the sky.\n"
+		"The composition of Venus' clouds was first identified by the Soviet Venera and American Pioneer Venus missions.\n"
+		"Venus' atmosphere is devoid of water vapor, suggesting that any water present on the planet's surface in the past has been lost.\n",
+		"The lack of a magnetic field and protective atmosphere on Venus results in its surface being bombarded by solar wind and cosmic rays.\n"
+		"Venus' thick atmosphere makes it difficult for heat to escape, resulting in a lack of significant temperature variation between its day and night sides.\n"
+		"The surface of Venus is marked by vast plains, highland regions, and large volcanic features like shield volcanoes and lava channels.\n"
+		"The Soviet Venera 13 lander was the first spacecraft to successfully transmit images from the surface of Venus in 1982.\n"
+		"The harsh conditions on Venus make it challenging for spacecraft to survive for long periods on its surface.\n",
+		"Venus' lack of plate tectonics means its surface does not undergo the same recycling processes as Earth's, leading to older surface features being preserved.\n"
+		"The rotation of Venus is synchronized with its orbit around the Sun, meaning the same side always faces the Sun during specific points in its orbit.\n"
+		"The temperature on Venus' surface is hot enough to melt most metals, including lead and zinc.\n"
+		"The planet's surface is thought to be relatively young, with many regions showing evidence of recent volcanic activity.\n"
+		"Venus' clouds contain sulfur dioxide and sulfuric acid, which contributes to the planet's acidic environment.\n",
+		"The presence of sulfur compounds in Venus' atmosphere is believed to be due to volcanic activity and the breakdown of rocks on its surface.\n"
+		"Venus has undergone extensive resurfacing events, which have erased many older surface features.\n"
+		"The Venusian surface is marked by vast plains, highland regions, and thousands of volcanic features."
+		"Venus' surface temperature is uniform across its entire globe due to the planet's slow rotation and thick atmosphere.\n"
+		"Venus' surface pressure is equivalent to being about 1 kilometer (0.62 miles) underwater on Earth.\n",
+		"The clouds of Venus reflect a significant amount of sunlight, contributing to its high albedo, or reflectivity.\n"
+		"Venus' dense atmosphere produces strong winds at its cloud level, with speeds reaching up to 200 miles per hour (320 kilometers per hour).\n"
+		"Venus' thick atmosphere contains layers of clouds, including sulfuric acid clouds, which obscure observations of its surface from space.\n"
+		"The atmosphere of Venus is composed mainly of carbon dioxide, with trace amounts of nitrogen and other gases.\n"
+		"Venus' lack of a magnetic field means it is more susceptible to the effects of solar wind, which can strip away its atmosphere over time.\n",
+		"The surface of Venus is characterized by vast plains, highland regions, and volcanic features such as shield volcanoes and lava channels.\n"
+		"Venus' surface is marked by numerous impact craters, volcanic features, and tectonic structures.\n"
+		"Venus' dense atmosphere produces intense greenhouse effect, trapping heat and making it the hottest planet in the solar system.\n"
+		"The surface of Venus has been shaped by extensive volcanic activity, with evidence of recent volcanic eruptions.\n"
+		"Venus' thick atmosphere is composed mainly of carbon dioxide, with clouds of sulfuric acid, creating extreme surface conditions.\n"
+	};
+
+	StandardFactCout(Ven, Fact);
 }
 
 void EarthFact() {
-	cout << "This is the Earth" << endl;
+	
 }
 
 void MarsFact() {

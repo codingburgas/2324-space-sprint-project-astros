@@ -1,4 +1,10 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
 #pragma once
+
+void StandardFactCout(int Planet, string Fact[]);
 
 void SolFact();
 void MercFact();
