@@ -258,7 +258,62 @@ void EarthFact() {
 }
 
 void MarsFact() {
-	cout << "This is Mars" << endl;
+	Mars++;
+
+	string Fact[10] = {
+		"Mars is the fourth planet from the Sun in the solar system.\n"
+		"It is often referred to as the 'Red Planet' due to its reddish appearance.\n"
+		"Mars has a thin atmosphere composed mainly of carbon dioxide, with traces of nitrogen and argon.\n"
+		"The surface of Mars is dry and rocky, with large dust storms that can cover the entire planet.\n"
+		"Mars has two small moons, Phobos and Deimos, which are thought to be captured asteroids.\n",
+		"The average surface temperature on Mars is about -80 degrees Fahrenheit (-62 degrees Celsius).\n"
+		"Mars has polar ice caps made of water ice and dry ice (frozen carbon dioxide).\n"
+		"The tallest volcano in the solar system, Olympus Mons, is located on Mars.\n"
+		"Olympus Mons is about 13.6 miles (22 kilometers) high, nearly three times the height of Mount Everest.\n"
+		"Mars has a canyon system called Valles Marineris, which is about 2,500 miles (4,000 kilometers) long and up to 7 miles (11 kilometers) deep.\n",
+		"Valles Marineris is the largest canyon system in the solar system.\n"
+		"Mars has the largest volcano, the largest canyon system, and the largest impact crater (Hellas Planitia) in the solar system.\n"
+		"The largest canyon on Mars, Valles Marineris, is named after the Mariner 9 spacecraft, which first observed it in 1971.\n"
+		"Mars has a day length similar to Earth's, with a rotation period of about 24.6 hours.\n"
+		"Mars has a year length of about 687 Earth days.\n",
+		"Mars experiences significant temperature variations between day and night, ranging from about -195 degrees Fahrenheit (-125 degrees Celsius) at night to about 70 degrees Fahrenheit (20 degrees Celsius) during the day near the equator.\n"
+		"Mars' surface is covered in iron oxide (rust), giving it a reddish appearance.\n"
+		"Mars has seasons similar to Earth's due to its axial tilt of about 25 degrees.\n"
+		"The two polar ice caps on Mars grow and shrink with the seasons, composed of a mixture of water ice and dry ice.\n"
+		"Mars has the largest volcano in the solar system, Olympus Mons, which is about 370 miles (600 kilometers) in diameter.\n",
+		"The surface gravity on Mars is about 38% of Earth's, meaning objects weigh less on Mars.\n"
+		"Mars has a thin atmosphere, with a surface pressure less than 1% of Earth's atmospheric pressure.\n"
+		"Despite its thin atmosphere, Mars can experience intense dust storms that can cover the entire planet for months.\n"
+		"Mars' atmosphere is too thin to support liquid water on the surface, but water ice exists beneath the surface and at the polar ice caps.\n"
+		"Mars has a relatively smooth northern hemisphere and a heavily cratered southern hemisphere.\n",
+		"The southern hemisphere of Mars is older and more heavily cratered than the northern hemisphere.\n"
+		"Mars has the largest canyon system in the solar system, Valles Marineris, which is thought to have formed from tectonic activity and erosion.\n"
+		"Mars has no global magnetic field, but localized magnetic fields have been detected in some regions of the planet's crust.\n"
+		"Mars' thin atmosphere allows for significant temperature variations between day and night and between different locations on the planet.\n"
+		"Mars' thin atmosphere also results in strong winds that can create dust storms and shape the planet's surface.\n",
+		"Mars has been visited by numerous spacecraft, including orbiters, landers, and rovers, sent by various space agencies from around the world.\n"
+		"The first successful Mars mission was NASA's Mariner 4, which flew by the planet in 1965 and returned the first close-up images of its surface.\n"
+		"Mars has been a primary target for exploration due to its potential for harboring past or present life and its similarities to Earth.\n"
+		"The surface of Mars is covered in various geological features, including craters, volcanoes, valleys, and plains.\n"
+		"Mars has the highest volcano in the solar system, Olympus Mons, which is about 13.6 miles (22 kilometers) high and 370 miles (600 kilometers) in diameter.\n",
+		"Mars has the deepest canyon in the solar system, Valles Marineris, which is about 2,500 miles (4,000 kilometers) long and up to 7 miles (11 kilometers) deep.\n"
+		"Mars has a thin atmosphere composed mainly of carbon dioxide, with traces of nitrogen and argon.\n"
+		"The surface of Mars is heavily cratered, indicating a history of impacts from asteroids and comets.\n"
+		"Mars has polar ice caps made of water ice and dry ice (frozen carbon dioxide), which grow and shrink with the seasons.\n"
+		"Mars has a thin atmosphere that is not breathable for humans, with a surface pressure about 0.6% of Earth's atmospheric pressure.\n",
+		"Mars has a reddish appearance due to iron oxide (rust) on its surface.\n"
+		"Mars has two small moons, Phobos and Deimos, which are irregularly shaped and likely captured asteroids.\n"
+		"Mars has a day length similar to Earth's, with a rotation period of about 24.6 hours.\n"
+		"Mars has a year length of about 687 Earth days, or about 1.88 Earth years.\n"
+		"Mars' thin atmosphere allows for significant temperature variations between day and night, with daytime temperatures reaching about 70 degrees Fahrenheit (20 degrees Celsius) near the equator and nighttime temperatures dropping to about -195 degrees Fahrenheit (-125 degrees Celsius).\n",
+		"Mars' thin atmosphere also results in strong winds that can create dust storms that cover the entire planet for months at a time.\n"
+		"Mars has been a target for exploration due to its potential for harboring past or present life and its similarities to Earth.\n"
+		"Mars has been visited by numerous spacecraft, including orbiters, landers, and rovers, sent by various space agencies from around the world.\n"
+		"The first successful Mars mission was NASA's Mariner 4, which flew by the planet in 1965 and returned the first close-up images of its surface.\n"
+		"Mars has been a subject of fascination for scientists and the public alike, with ongoing efforts to study its geology, climate, and potential for life.\n"
+	};
+
+	StandardFactCout(Mars, Fact);
 }
 
 void AsteroidFact() {
