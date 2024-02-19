@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Menu.h"
 #include "Game2.h"
 #include "GlobalFunctions.h"
 #include <windows.h>
@@ -61,5 +62,7 @@ void playGame2()
 			int Mercury = 0, Venus = 0, Earth = 0, Mars = 0;
 		}
 	}
+	cin.get();
+	ShowMenu();
 }
 
