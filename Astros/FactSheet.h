@@ -4,7 +4,7 @@ using namespace std;
 
 #pragma once
 
-void StandardFactCout(int Planet, string Fact[]);
+void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]);
 
 void SolFact();
 void MercFact();

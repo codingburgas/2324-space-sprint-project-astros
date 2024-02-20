@@ -37,10 +37,10 @@ int AnswerCheck(string compareto, string thiss) {
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
 string AnswerCorrect(string answ) { // <-- The given answer (Lines 90-92) //
-	const int standard = 12; // The number of possible answers and possible coincidences is set to a constant standard as it it a subject to change //
+	const int standard = 13; // The number of possible answers and possible coincidences is set to a constant standard as it it a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Exit", "None"};
+	string PosAnsw[standard] = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Asteroid Belt", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Exit", "None"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -96,7 +96,7 @@ void AnswerInit() {
 		else if (answer == "Venus") VenFact();
 		else if (answer == "Earth") EarthFact();
 		else if (answer == "Mars") MarsFact();
-		else if (answer == "Asteroid Belt") AsteroidFact();
+		else if (answer == "Asteroid Belt") AsteroidBeltFact();
 		else if (answer == "Jupiter") JupiFact();
 		else if (answer == "Saturn") SatFact();
 		else if (answer == "Uranus") UranFact();

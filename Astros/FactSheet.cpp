@@ -7,12 +7,12 @@ using namespace std;
 
 int Sol = 0, Merc = 0, Ven = 0, Earth = 0, Mars = 0, Asteroid = 0, Jupi = 0, Sat = 0, Uran = 0, Nep = 0, Plu = 0;
 
-void StandardFactCout(int Planet, string Fact[]) {
-	for (int i = Planet - 1; i < Planet; i++) {
-		if (i == 10) {
-			cout << "There aren't any different facts to offer about the Sun." << endl;
+void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]) {
+	for (int i = CelestialBody - 1; i < CelestialBody; i++) {
+		if (i == FactCount) {
+			cout << "There aren't any more facts to offer about this celestial body" << endl;
 			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl;
-			Sol = 0;
+			CelestialBody = 0;
 		}
 		else {
 			cout << Fact[i];
@@ -77,7 +77,7 @@ void SolFact() {
 		"The Sun has been revered by civilizations throughout history as a symbol of power, life, and divinity.\n"
 	};
 
-	StandardFactCout(Sol, Fact);
+	StandardFactCout(10, Sol, Fact);
 }
 
 void MercFact() {
@@ -136,7 +136,7 @@ void MercFact() {
 		"Mercury's surface is covered in a layer of fine dust and rocks, known as regolith.\n" 
 	};
 
-	StandardFactCout(Merc, Fact);
+	StandardFactCout(10, Merc, Fact);
 }
 
 void VenFact() {
@@ -195,7 +195,7 @@ void VenFact() {
 		"Venus' thick atmosphere is composed mainly of carbon dioxide, with clouds of sulfuric acid, creating extreme surface conditions.\n"
 	};
 
-	StandardFactCout(Ven, Fact);
+	StandardFactCout(10, Ven, Fact);
 }
 
 void EarthFact() {
@@ -254,7 +254,7 @@ void EarthFact() {
 		"Earth is the only planet in the solar system known to have liquid water on its surface, which is essential for the existence\n"
 	};
 
-	StandardFactCout(Earth, Fact);
+	StandardFactCout(10, Earth, Fact);
 }
 
 void MarsFact() {
@@ -313,13 +313,13 @@ void MarsFact() {
 		"Mars has been a subject of fascination for scientists and the public alike, with ongoing efforts to study its geology, climate, and potential for life.\n"
 	};
 
-	StandardFactCout(Mars, Fact);
+	StandardFactCout(10, Mars, Fact);
 }
 
 void AsteroidBeltFact() {
 	Asteroid++;
 
-	string Fact[10] = {
+	string Fact[5] = {
 		"The asteroid belt is a region of space located between the orbits of Mars and Jupiter.\n"
 		"It contains millions of rocky objects, called asteroids, ranging in size from tiny pebbles to several hundred miles in diameter.\n"
 		"The total mass of all the asteroids in the belt is estimated to be less than the mass of Earth's Moon.\n"
@@ -347,11 +347,66 @@ void AsteroidBeltFact() {
 		"Future missions to the asteroid belt may include asteroid mining and exploration for resources such as water and metals.\n"
 	};
 
-	StandardFactCout(Asteroid, Fact);
+	StandardFactCout(5, Asteroid, Fact);
 }
 
 void JupiFact() {
-	cout << "This is Jupiter" << endl;
+	Jupi++;
+
+	string Fact[10] = {
+		"Jupiter is the largest planet in the solar system, with a diameter of about 86,881 miles (139,822 kilometers).\n"
+		"It is primarily composed of hydrogen and helium, similar to the composition of the Sun.\n"
+		"Jupiter has a strong magnetic field, about 14 times stronger than Earth's.\n"
+		"The planet has a rapid rotation, completing a day in just under 10 hours.\n"
+		"Jupiter has a faint ring system composed of dust particles, first discovered by the Voyager 1 spacecraft.\n",
+		"The Great Red Spot on Jupiter is a massive storm that has been raging for at least 400 years.\n"
+		"The Great Red Spot is large enough to fit several Earths inside it.\n"
+		"Jupiter has at least 79 moons, including the four largest moons known as the Galilean moons: Io, Europa, Ganymede, and Callisto.\n"
+		"The Galilean moons were discovered by Galileo Galilei in 1610 and were the first objects found to orbit another planet.\n"
+		"Io, one of Jupiter's moons, is the most volcanically active body in the solar system.\n",
+		"Europa, another moon of Jupiter, has a subsurface ocean beneath its icy crust, making it a target for astrobiology research.\n"
+		"Ganymede is the largest moon in the solar system and has its own magnetic field.\n"
+		"Ganymede is the only moon in the solar system known to have its own magnetic field.\n"
+		"Callisto, the outermost of the Galilean moons, has a heavily cratered surface and a relatively thin atmosphere.\n"
+		"Jupiter's magnetic field creates intense radiation belts around the planet, posing a hazard to spacecraft.\n",
+		"Jupiter's atmosphere is divided into bands of clouds, with alternating light and dark stripes.\n"
+		"The bands of clouds are caused by Jupiter's rapid rotation and convective motion in its atmosphere.\n"
+		"Jupiter's atmosphere contains ammonia, methane, and other trace gases, which give it its distinct colors.\n"
+		"The upper atmosphere of Jupiter is composed mainly of hydrogen and helium.\n"
+		"Jupiter's intense magnetic field traps charged particles from the solar wind, creating auroras near its poles.\n",
+		"Jupiter emits more heat than it receives from the Sun, indicating ongoing internal processes.\n"
+		"Jupiter has a faint planetary ring system composed of dust particles.\n"
+		"The rings of Jupiter were first discovered by the Voyager 1 spacecraft in 1979.\n"
+		"Jupiter's rings are primarily composed of small dust particles ejected from nearby moons.\n"
+		"The rings of Jupiter are relatively faint and difficult to observe from Earth.\n",
+		"Jupiter's interior is thought to consist of a dense core of rock and metal surrounded by layers of metallic hydrogen and liquid hydrogen.\n"
+		"The pressure and temperature inside Jupiter increase with depth, reaching extreme conditions in its core.\n"
+		"Jupiter's strong magnetic field is generated by the motion of metallic hydrogen in its interior.\n"
+		"The magnetic field of Jupiter extends far beyond the planet, creating a magnetosphere that interacts with its moons and the solar wind.\n"
+		"Jupiter has a faint ring system composed of dust particles, first discovered by the Voyager 1 spacecraft.\n",
+		"The Great Red Spot on Jupiter is a massive storm that has been raging for at least 400 years.\n"
+		"The Great Red Spot is large enough to fit several Earths inside it.\n"
+		"Jupiter has at least 79 moons, including the four largest moons known as the Galilean moons: Io, Europa, Ganymede, and Callisto.\n"
+		"The Galilean moons were discovered by Galileo Galilei in 1610 and were the first objects found to orbit another planet.\n"
+		"Io, one of Jupiter's moons, is the most volcanically active body in the solar system.\n",
+		"Europa, another moon of Jupiter, has a subsurface ocean beneath its icy crust, making it a target for astrobiology research.\n"
+		"Ganymede is the largest moon in the solar system and has its own magnetic field.\n"
+		"Ganymede is the only moon in the solar system known to have its own magnetic field.\n"
+		"Callisto, the outermost of the Galilean moons, has a heavily cratered surface and a relatively thin atmosphere.\n"
+		"Jupiter's magnetic field creates intense radiation belts around the planet, posing a hazard to spacecraft.\n",
+		"Jupiter's atmosphere is divided into bands of clouds, with alternating light and dark stripes.\n"
+		"The bands of clouds are caused by Jupiter's rapid rotation and convective motion in its atmosphere.\n"
+		"Jupiter's atmosphere contains ammonia, methane, and other trace gases, which give it its distinct colors.\n"
+		"The upper atmosphere of Jupiter is composed mainly of hydrogen and helium.\n"
+		"Jupiter's intense magnetic field traps charged particles from the solar wind, creating auroras near its poles.\n",
+		"Jupiter emits more heat than it receives from the Sun, indicating ongoing internal processes.\n"
+		"Jupiter has a faint planetary ring system composed of dust particles.\n"
+		"The rings of Jupiter were first discovered by the Voyager 1 spacecraft in 1979.\n"
+		"Jupiter's rings are primarily composed of small dust particles ejected from nearby moons.\n"
+		"The rings of Jupiter are relatively faint and difficult to observe from Earth.\n"
+	};
+
+	StandardFactCout(10, Jupi, Fact);
 }
 
 void SatFact() {
