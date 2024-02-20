@@ -587,5 +587,35 @@ void NepFact() {
 }
 
 void PluFact() {
-	cout << "This is Pluto" << endl;
+	Plu++;
+
+	string Fact = {
+		"Pluto was discovered on February 18, 1930, by astronomer Clyde Tombaugh.\n"
+		"It was initially considered the ninth planet in our solar system.\n"
+		"Pluto was reclassified as a 'dwarf planet' by the International Astronomical Union (IAU) in 2006.\n"
+		"It is located in the Kuiper Belt, a region beyond Neptune filled with icy bodies.\n"
+		"Pluto's average distance from the Sun is about 3.7 billion miles (5.9 billion kilometers).\n",
+		"It takes Pluto about 248 Earth years to orbit the Sun.\n"
+		"Pluto has five known moons: Charon, Styx, Nix, Kerberos, and Hydra.\n"
+		"Charon is the largest moon of Pluto and is about half the size of Pluto itself.\n"
+		"Pluto is smaller than Earth's Moon, with a diameter of about 1,473 miles (2,370 kilometers).\n"
+		"Its surface is covered in frozen nitrogen, methane, and carbon monoxide.\n",
+		"Pluto's atmosphere is thin and composed mainly of nitrogen, with traces of methane and carbon monoxide.\n"
+		"Temperatures on Pluto can drop as low as -375 degrees Fahrenheit (-225 degrees Celsius).\n"
+		"Pluto's surface features include mountains, valleys, and large plains of frozen ice.\n"
+		"It has a reddish-brown color due to complex organic molecules called tholins.\n"
+		"Pluto's orbit is more elliptical and tilted compared to the planets, causing it to cross Neptune's orbit.\n",
+		"A year on Pluto is equivalent to 248 Earth years, but a day lasts about 6.4 Earth days.\n"
+		"Pluto was named after the Roman god of the underworld.\n"
+		"It was first suggested to be named after the Greek god of the underworld, Hades.\n"
+		"Pluto's discovery was partially motivated by predictions of a ninth planet's existence based on perturbations in Neptune's orbit.\n"
+		"The discovery of Eris and other Kuiper Belt objects prompted a reevaluation of Pluto's planetary status.\n",
+		"New Horizons, a NASA spacecraft, conducted a flyby of Pluto in 2015, providing detailed images and data.\n"
+		"This flyby revealed geological activity on Pluto, including mountains made of water ice.\n"
+		"Pluto's largest moon, Charon, has a canyon system called Serenity Chasma that is estimated to be 4-6 miles (7-9 kilometers) deep.\n"
+		"Pluto's atmosphere can freeze and collapse as it moves farther from the Sun during its elliptical orbit.\n"
+		"Despite being reclassified, Pluto remains a fascinating object of study for astronomers, offering insights into the outer reaches of our solar system.\n"
+	};
+
+	StandardFactCout(5, Plu, Fact);
 }
