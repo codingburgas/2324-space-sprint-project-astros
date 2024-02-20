@@ -410,7 +410,62 @@ void JupiFact() {
 }
 
 void SatFact() {
-	cout << "This is Saturn" << endl;
+	Sat++;
+
+	string Fact[10] = {
+		"Saturn is the sixth planet from the Sun in our solar system.\n"
+		"It is the second-largest planet, with a diameter of about 74,900 miles (120,500 kilometers).\n"
+		"Saturn is a gas giant, primarily composed of hydrogen and helium.\n"
+		"The planet's average density is less than that of water, meaning it could float in water.\n"
+		"Saturn has a unique feature - its prominent ring system, which consists of ice particles, dust, and rocks.\n",
+		"The rings of Saturn are about 175,000 miles (282,000 kilometers) in diameter but only about 30 feet (10 meters) thick.\n"
+		"These rings are divided into several main groups: A, B, and C rings, with the Cassini Division separating the A and B rings.\n"
+		"The rings are continuously changing due to interactions with Saturn's moons and other factors.\n"
+		"Saturn has the fastest rotation rate of any planet in the solar system, completing a day in about 10.7 hours.\n"
+		"Its rapid rotation causes it to flatten slightly at the poles and bulge at the equator.\n",
+		"Saturn has a strong magnetic field, slightly weaker than Jupiter's but still much stronger than Earth's.\n"
+		"This magnetic field is about 578 times more powerful than Earth's.\n"
+		"The magnetic field of Saturn is not perfectly aligned with its rotation axis, causing it to have a noticeable tilt.\n"
+		"The tilt of Saturn's magnetic field axis is about 0.6 degrees relative to its rotation axis.\n"
+		"Saturn's atmosphere is primarily composed of hydrogen (about 96%) and helium (about 3%).\n",
+		"Trace amounts of other gases, such as methane, ammonia, and water vapor, are also present in its atmosphere.\n"
+		"Saturn's upper atmosphere features bands of clouds and winds that can reach speeds of up to 1,100 miles per hour (1,800 kilometers per hour).\n"
+		"The atmosphere of Saturn exhibits a variety of weather patterns, including storms, jet streams, and cloud formations.\n"
+		"The temperature in Saturn's upper atmosphere is much colder than on Earth, averaging around -288 degrees Fahrenheit (-178 degrees Celsius).\n"
+		"Saturn's hexagonal-shaped jet stream at its north pole is a unique atmospheric phenomenon.\n",
+		"The hexagonal jet stream has a diameter of about 20,000 miles (32,000 kilometers).\n"
+		"The cause of the hexagonal shape is still not fully understood.\n"
+		"Saturn has a series of fainter rings known as the D, E, F, and G rings, located beyond the main ring system.\n"
+		"The rings of Saturn are believed to be relatively young, possibly formed within the last few hundred million years.\n"
+		"The particles in Saturn's rings range in size from micrometers to several meters.\n",
+		"Saturn has been visited by several spacecraft, including Pioneer 11, Voyager 1 and 2, and the Cassini-Huygens mission.\n"
+		"The Cassini-Huygens mission provided detailed observations of Saturn's rings, atmosphere, and magnetosphere.\n"
+		"Saturn's rings are visible from Earth with even a small telescope.\n"
+		"The rings can appear to vanish when viewed edge-on from Earth, a phenomenon known as ring plane crossing.\n"
+		"Saturn has a series of narrow ringlets within its main ring system.\n",
+		"These ringlets are caused by the gravitational influence of nearby moons.\n"
+		"The largest gap in Saturn's rings, the Cassini Division, is about 2,920 miles (4,700 kilometers) wide.\n"
+		"Saturn's rings are named in the order of their discovery, using letters of the alphabet.\n"
+		"The main rings are designated with letters A, B, and C, in order of increasing distance from Saturn.\n"
+		"Saturn's rings are not solid structures but are instead made up of countless individual particles orbiting the planet.\n",
+		"Saturn's rings are constantly changing due to collisions between particles and interactions with moons.\n"
+		"The rings of Saturn are believed to be remnants of a moon or moons that were shattered by tidal forces.\n"
+		"Shepherd moons, such as Prometheus and Pandora, help maintain the shape of Saturn's rings by gravitationally interacting with the ring particles.\n"
+		"Saturn has a faint planetary ring system composed of dust particles.\n"
+		"The rings of Saturn were first observed by Galileo Galilei in 1610 but were later identified as rings by Christiaan Huygens in 1655.\n",
+		"Saturn's rings are mostly composed of water ice, with some rocky material mixed in.\n"
+		"The outer edge of Saturn's rings is known as the Phoebe ring, named after Saturn's moon Phoebe.\n"
+		"Saturn's rings are much brighter when viewed from Earth's perspective than when viewed from spacecraft near Saturn.\n"
+		"The rings of Saturn are visible through even a small telescope from Earth.\n"
+		"Saturn's rings are believed to be a temporary feature in its geological history.\n",
+		"The rings of Saturn are continuously being replenished by small impacts and collisions between ring particles.\n"
+		"Saturn's rings are so extensive that they would stretch from Earth to the Moon if they were laid flat.\n"
+		"The rings of Saturn are made up of countless individual particles, ranging in size from micrometers to several meters.\n"
+		"Saturn's rings reflect sunlight, making them appear bright and visible from Earth.\n"
+		"The rings of Saturn are one of the most iconic features of the solar system and have fascinated astronomers for centuries.\n"
+	};
+
+	StandardFactCout(10, Sat, Fact);
 }
 
 void UranFact() {
