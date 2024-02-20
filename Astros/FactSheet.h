@@ -17,3 +17,7 @@ void SatFact();
 void UranFact();
 void NepFact();
 void PluFact();
+
+void MoonsFact(string PlanetName);
+
+void KuiperBeltFact();

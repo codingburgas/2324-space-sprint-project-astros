@@ -37,10 +37,10 @@ int AnswerCheck(string compareto, string thiss) {
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
 string AnswerCorrect(string answ) { // <-- The given answer (Lines 90-92) //
-	const int standard = 13; // The number of possible answers and possible coincidences is set to a constant standard as it it a subject to change //
+	const int standard = 14; // The number of possible answers and possible coincidences is set to a constant standard as it it a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Asteroid Belt", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Exit", "None"};
+	string PosAnsw[standard] = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Asteroid Belt", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Kuiper Belt", "Exit", "None"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -83,7 +83,9 @@ string AnswerCorrect(string answ) { // <-- The given answer (Lines 90-92) //
 void AnswerInit() {
 	clear();
 	PrintLogo();
+
 	bool confirmation = true;
+		
 	while (confirmation) {
 		cout << "Which celestial body would you like to hear about?" << endl;
 		string answer;
@@ -102,6 +104,7 @@ void AnswerInit() {
 		else if (answer == "Uranus") UranFact();
 		else if (answer == "Neptune") NepFact();
 		else if (answer == "Pluto") PluFact();
+		else if (answer == "Kuiper Belt") KuiperBeltFact();
 		else if (answer == "Exit") confirmation = false;
 		else if (answer == "None") ShowMenu();
 		else cout << answer << "? Could you please give us a coherent answer?" << endl;

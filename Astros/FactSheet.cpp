@@ -5,7 +5,7 @@
 
 using namespace std;
 
-int Sol = 0, Merc = 0, Ven = 0, Earth = 0, Mars = 0, Asteroid = 0, Jupi = 0, Sat = 0, Uran = 0, Nep = 0, Plu = 0;
+int Sol = 0, Merc = 0, Ven = 0, Earth = 0, Mars = 0, Asteroid = 0, Jupi = 0, Sat = 0, Uran = 0, Nep = 0, Plu = 0, Kuiper=0;
 
 void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]) {
 	for (int i = CelestialBody - 1; i < CelestialBody; i++) {
@@ -589,7 +589,7 @@ void NepFact() {
 void PluFact() {
 	Plu++;
 
-	string Fact = {
+	string Fact[5] = {
 		"Pluto was discovered on February 18, 1930, by astronomer Clyde Tombaugh.\n"
 		"It was initially considered the ninth planet in our solar system.\n"
 		"Pluto was reclassified as a 'dwarf planet' by the International Astronomical Union (IAU) in 2006.\n"
@@ -618,4 +618,38 @@ void PluFact() {
 	};
 
 	StandardFactCout(5, Plu, Fact);
+}
+
+void KuiperBeltFact() {
+	Kuiper++;
+
+	string Fact[5] = {
+		"The Kuiper Belt is a region of the outer solar system beyond Neptune.\n"
+		"It is similar to the asteroid belt but is composed mainly of icy bodies.\n"
+		"The Kuiper Belt is named after Dutch-American astronomer Gerard Kuiper, who first proposed its existence.\n"
+		"It is estimated to contain hundreds of thousands of objects larger than 100 kilometers in diameter.\n"
+		"The largest known object in the Kuiper Belt is the dwarf planet Pluto.\n",
+		"Pluto was once considered the ninth planet before its reclassification as a dwarf planet in 2006.\n"
+		"The Kuiper Belt extends from about 30 astronomical units (AU) to 50 AU from the Sun.\n"
+		"One AU is the average distance from the Earth to the Sun, approximately 93 million miles (150 million kilometers).\n"
+		"The discovery of the first Kuiper Belt object, 1992 QB1, was announced in 1992.\n"
+		"The Kuiper Belt is thought to be the source of short-period comets.\n",
+		"Short-period comets have orbits that last less than 200 years and are influenced by the gravitational pull of Neptune.\n"
+		"The Kuiper Belt is also home to long-period comets, which have orbits lasting thousands to millions of years.\n"
+		"Some Kuiper Belt objects have moons, such as Pluto's moons Charon, Nix, Hydra, Kerberos, and Styx.\n"
+		"The New Horizons spacecraft conducted a flyby of Pluto in 2015, providing valuable data about the dwarf planet and its moons.\n"
+		"Beyond the Kuiper Belt lies the scattered disc, a sparsely populated region of icy bodies with highly eccentric orbits.\n",
+		"The discovery of the Kuiper Belt has revolutionized our understanding of the outer solar system.\n"
+		"Objects in the Kuiper Belt are thought to be remnants from the early solar system's formation.\n"
+		"The Kuiper Belt is home to a variety of objects, including dwarf planets, planetesimals, and small icy bodies.\n"
+		"The study of the Kuiper Belt helps scientists learn more about the formation and evolution of the solar system.\n"
+		"The International Astronomical Union (IAU) recognizes Pluto, Eris, Haumea, Makemake, and others as dwarf planets in the Kuiper Belt.\n",
+		"The Hubble Space Telescope has been instrumental in discovering and studying objects within the Kuiper Belt.\n"
+		"The Kuiper Belt is believed to contain objects with a wide range of compositions, including water ice, methane ice, and organic compounds.\n"
+		"Some Kuiper Belt objects have highly inclined orbits compared to the plane of the solar system.\n"
+		"The Kuiper Belt was likely formed from leftover material that did not accrete into planets during the solar system's formation.\n"
+		"Continued exploration and study of the Kuiper Belt offer insights into the outer regions of our solar system and the processes that shaped it.\n"
+	};
+
+	StandardFactCout(5, Kuiper, Fact);
 }
