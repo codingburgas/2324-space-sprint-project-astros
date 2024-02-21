@@ -4,6 +4,7 @@
 #include "Game1.h"
 #include "Game2.h"
 #include "Game3.h"
+#include "Game4.h"
 #include "GlobalFunctions.h"
 using namespace std;
 
@@ -15,6 +16,7 @@ void ShowMenu()
 	cout << "1. Astronomy Quiz: " << endl;
 	cout << "2. Planet Akinator: " << endl;
 	cout << "3. Cosmic Trivia: " << endl;
+	cout << "4. Guess The Word: " << endl;
 
 	string choice;
 	bool timetochoose = true;
@@ -22,19 +24,23 @@ void ShowMenu()
 	while (timetochoose) {
 		getline(cin, choice, '\n');
 		
-		if (choice == "1" or choice == "Astronomy Quiz") {
+		if (choice == "1" || choice == "Astronomy Quiz") {
 			playGame1();
 			timetochoose = false;
 		}
-		else if (choice == "2" or choice == "Planet Akinator") {
+		else if (choice == "2" || choice == "Planet Akinator") {
 			playGame2();
 			timetochoose = false;
 		}
-		else if (choice == "3" or choice == "Cosmic Trivia") {
+		else if (choice == "3" || choice == "Cosmic Trivia") {
 			playGame3();
 			timetochoose = false;
 		}
-		else if (choice == "0" or choice == "Exit" or choice == "No") {
+		else if (choice == "4") {
+			playGame4();
+			timetochoose = false;
+		}
+		else if (choice == "0" || choice == "Exit" or choice == "No") {
 			timetochoose = false;
 		}
 
