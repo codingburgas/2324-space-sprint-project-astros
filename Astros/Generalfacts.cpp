@@ -36,7 +36,7 @@ int AnswerCheck(string compareto, string thiss) {
 }
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
-void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 90-92) //
+void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 112-115) //
 	const int standard = 47; // The number of possible answers is set to a constant standard as it is a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
@@ -65,6 +65,7 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 90
 		}
 	}
 	
+	// This loop eliminates the function of the loop on Lines 88 - 98 beacause if the given answer is moon related, it might cause some coincidences that may end up eliminating the functionality of the function //
 	if (SaveIndex >= 4 and SaveIndex <= 5 or SaveIndex >= 7 and SaveIndex <= 9 or SaveIndex >= 12 and SaveIndex <= 16 or SaveIndex >= 18 and SaveIndex <= 24 or SaveIndex >= 26 and SaveIndex <= 31 or SaveIndex >= 33 and SaveIndex <= 36 or SaveIndex >= 38 and SaveIndex <= 43) {
 		for (int i = 0; i < standard; i++) {
 			PosCon[i] = 0;
@@ -113,11 +114,11 @@ void AnswerInit() {
 
 		getline(cin, answer, '\n');
 		cout << endl;
-		AnswerCorrect(answer, mooncheck); // Depending on the value that "AnswerCorrect()" returns, the function prints out a set of facts from FactSheet.cpp //
+		AnswerCorrect(answer, mooncheck); // Depending on the values of "answer" and "mooncheck" (After they have been processed by AnswerCorrect()), the function prints out a set of facts from FactSheet.cpp //
 
-		if (mooncheck) MoonsFact(answer);
-		else {
-			if (answer == "The Sun") SolFact();
+		if (mooncheck) MoonsFact(answer); // If it has been confirmed by Answercorrect() that the given answer is a moon and not a planet, the MoonsFact() function is activated //
+		else { // If not, ... //
+			if (answer == "The Sun") SolFact(); // ... either one of the planetary functions will be activated or ... //
 			else if (answer == "Mercury") MercFact();
 			else if (answer == "Venus") VenFact();
 			else if (answer == "The Earth") EarthFact();
@@ -129,9 +130,9 @@ void AnswerInit() {
 			else if (answer == "Neptune") NepFact();
 			else if (answer == "Pluto") PluFact();
 			else if (answer == "Kuiper Belt") KuiperBeltFact();
-			else if (answer == "Exit") confirmation = false;
-			else if (answer == "None") ShowMenu();
-			else cout << answer << "? Could you please give us a coherent answer?" << endl;
+			else if (answer == "Exit") confirmation = false; // ... the programme will either stop, //
+			else if (answer == "None") ShowMenu(); // redirect the user to the Main Menu //
+			else cout << answer << "? Could you please give us a coherent answer?" << endl; // or ask them to give a coherent answer. //
 		}
 	}
 }
