@@ -36,11 +36,11 @@ int AnswerCheck(string compareto, string thiss) {
 }
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
-string AnswerCorrect(string answ) { // <-- The given answer (Lines 90-92) //
-	const int standard = 14; // The number of possible answers and possible coincidences is set to a constant standard as it it a subject to change //
+void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 90-92) //
+	const int standard = 47; // The number of possible answers is set to a constant standard as it is a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"Sun", "Mercury", "Venus", "Earth", "Mars", "Asteroid Belt", "Jupiter", "Saturn", "Uranus", "Neptune", "Pluto", "Kuiper Belt", "Exit", "None"};
+	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Earth/Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -57,26 +57,45 @@ string AnswerCorrect(string answ) { // <-- The given answer (Lines 90-92) //
 	int SaveIndex = 0; // This variable is used to save the index of the possible answer with the most similarities to the given answer //
 	int max = 0; // This variable is used to track the highest count of coincidences throughout the PosCon[] array //
 
-	// This loop checks for the highest coincidence count its index as it is a part of the PosCon[] array //
-	for (int i = 1; i < standard; i++) { 
+	// This loop checks for the highest coincidence count and its index as it is a part of the PosCon[] array //
+	for (int i = 0; i < standard; i++) { 
 		if (PosCon[i] > max) {
 			max = PosCon[i];
 			SaveIndex = i;
 		}
 	}
+	
+	if (SaveIndex >= 4 and SaveIndex <= 5 or SaveIndex >= 7 and SaveIndex <= 9 or SaveIndex >= 12 and SaveIndex <= 16 or SaveIndex >= 18 and SaveIndex <= 24 or SaveIndex >= 26 and SaveIndex <= 31 or SaveIndex >= 33 and SaveIndex <= 36 or SaveIndex >= 38 and SaveIndex <= 43) {
+		for (int i = 0; i < standard; i++) {
+			PosCon[i] = 0;
+		}
+	}
 
-	// The SaveResult variable doing its job (Line 56) //
-	SaveResult = PosAnsw[SaveIndex];
+	if (SaveIndex >= 4 and SaveIndex <= 5) SaveIndex = 3;
+	else if (SaveIndex >= 7 and SaveIndex <= 9) SaveIndex = 6;
+	else if (SaveIndex >= 12 and SaveIndex <= 16) SaveIndex = 11;
+	else if (SaveIndex >= 18 and SaveIndex <= 24) SaveIndex = 17;
+	else if (SaveIndex >= 26 and SaveIndex <= 31) SaveIndex = 25;
+	else if (SaveIndex >= 33 and SaveIndex <= 36) SaveIndex = 32;
+	else if (SaveIndex >= 38 and SaveIndex <= 43) SaveIndex = 37;
+	else moon = false;
+
+	max = int(PosAnsw[SaveIndex].length());
+	PosCon[SaveIndex] = max;
 
 	// This loop comes in handy in case there is another possible answer with just as many coincidences as the highest number of coincidences //
 	for (int i = 0; i < standard; i++) {
 		if (PosCon[i] == max and i != SaveIndex) {
+			// The SaveResult function doing its job //
 			SaveResult = answ;
+			moon = false;
 			break;
 		}
+		else {
+			SaveResult = PosAnsw[SaveIndex];
+		}
 	}
-
-	return SaveResult;
+	answ = SaveResult;
 }
 
 // This function entirely relies on functions "AnswerCorrect()" and "AnswerCheck()" //
@@ -85,40 +104,47 @@ void AnswerInit() {
 	PrintLogo();
 
 	bool confirmation = true;
-		
 	while (confirmation) {
 		cout << "Which celestial body would you like to hear about?" << endl;
+		cout << endl;
+
 		string answer;
-		getline(cin, answer);
-		
-		answer = AnswerCorrect(answer); // Depending on the value that "AnswerCorrect()" returns, the function prints out a set of facts from FactSheet.cpp //
-		
-		if (answer == "Sun") SolFact();
-		else if (answer == "Mercury") MercFact();
-		else if (answer == "Venus") VenFact();
-		else if (answer == "Earth") EarthFact();
-		else if (answer == "Mars") MarsFact();
-		else if (answer == "Asteroid Belt") AsteroidBeltFact();
-		else if (answer == "Jupiter") JupiFact();
-		else if (answer == "Saturn") SatFact();
-		else if (answer == "Uranus") UranFact();
-		else if (answer == "Neptune") NepFact();
-		else if (answer == "Pluto") PluFact();
-		else if (answer == "Kuiper Belt") KuiperBeltFact();
-		else if (answer == "Exit") confirmation = false;
-		else if (answer == "None") ShowMenu();
-		else cout << answer << "? Could you please give us a coherent answer?" << endl;
+		bool mooncheck = true;
+
+		getline(cin, answer, '\n');
+		cout << endl;
+		AnswerCorrect(answer, mooncheck); // Depending on the value that "AnswerCorrect()" returns, the function prints out a set of facts from FactSheet.cpp //
+
+		if (mooncheck) MoonsFact(answer);
+		else {
+			if (answer == "The Sun") SolFact();
+			else if (answer == "Mercury") MercFact();
+			else if (answer == "Venus") VenFact();
+			else if (answer == "The Earth") EarthFact();
+			else if (answer == "Mars") MarsFact();
+			else if (answer == "Asteroid Belt") AsteroidBeltFact();
+			else if (answer == "Jupiter") JupiFact();
+			else if (answer == "Saturn") SatFact();
+			else if (answer == "Uranus") UranFact();
+			else if (answer == "Neptune") NepFact();
+			else if (answer == "Pluto") PluFact();
+			else if (answer == "Kuiper Belt") KuiperBeltFact();
+			else if (answer == "Exit") confirmation = false;
+			else if (answer == "None") ShowMenu();
+			else cout << answer << "? Could you please give us a coherent answer?" << endl;
+		}
 	}
 }
 
 // This function basically "decides" whether or not you proceed wtih Game 3. If you choose 'No', it redirects you back to the starting menu... //
 void YourDecision() {
 	string decision;
-	getline(cin, decision);
+	getline(cin, decision, '\n');
 	if (decision == "Yes" or decision == "yes") AnswerInit(); // ... if you choose 'Yes' however, your will be redirected to the answer-distributing funcion "AnswerInit()" //
 	else if (decision == "No" or decision == "no") ShowMenu();
 	else {
 		cout << decision << "? Could you please give us a valid answer?" << endl; 
 		YourDecision();
 	}
+	// But if you enter an invalid answer, the programme will question it and ask you to give a valid one //
 }

@@ -36,7 +36,7 @@ void ShowMenu()
 			playGame3();
 			timetochoose = false;
 		}
-		else if (choice == "4") {
+		else if (choice == "4" || choice == "Guess The Word") {
 			playGame4();
 			timetochoose = false;
 		}
