@@ -8,16 +8,17 @@ using namespace std;
 int Sol = 0, Merc = 0, Ven = 0, Earth = 0, EarthMoon=0, Mars = 0, MarsMoon = 0, Asteroid = 0, Jupi = 0, Sat = 0, Uran = 0, Nep = 0, Plu = 0, Kuiper=0;
 
 void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]) {
-	for (int i = CelestialBody - 1; i < CelestialBody; i++) {
-		if (i == FactCount) {
+	//This is the standard Fact-Printing function //
+	for (int i = CelestialBody - 1; i < CelestialBody; i++) { // Based on the given name of the Celestial Body... //
+		if (i == FactCount) { // ... and the maximum fact count, it prints a corresponding answer // 
 			cout << endl;
-			cout << "There aren't any more facts to offer about this celestial body" << endl;
-			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl;
+			cout << "There aren't any more facts to offer about this celestial body" << endl; // Those two lines are printed every time the user reaches the limit of the fact sheet and the //
+			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl; // programme can no longer print out any new facts // 
 			cout << endl;
-			CelestialBody = 0;
+			CelestialBody = 0; // If that's the case, the fact counter is reset to 0 //
 		}
-		else {
-			cout << Fact[i];
+		else { // But if that's not the case, it simply prints a set of 5 facts and separates it with a new line //
+			cout << Fact[i]; 
 			cout << endl;
 		}
 	}
@@ -26,13 +27,15 @@ void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]) {
 void SolFact() {
 	Sol++;
 	
+	// This is an example of a Fact-Containing function or simply a fact sheet //
+
 	string Fact[10] = {
 		"The Sun is a star, a massive ball of glowing gas that provides light and heat to the solar system.\n\n"
 		"It is located at the center of our solar system, with the planets orbiting around it.\n\n"
 		"The Sun's diameter is about 109 times that of Earth.\n\n"
 		"Its mass is approximately 330,000 times that of Earth.\n\n"
-		"The Sun is composed mainly of hydrogen (about 75%) and helium (about 24%) by mass.\n\n",
-		"Its core is incredibly hot, reaching temperatures of about 15 million degrees Celsius (27 million degrees Fahrenheit).\n\n"
+		"The Sun is composed mainly of hydrogen (about 75%) and helium (about 24%) by mass.\n\n", // As you can see (check Line 32 also), there is a comma only every 5 facts. //
+		"Its core is incredibly hot, reaching temperatures of about 15 million degrees Celsius (27 million degrees Fahrenheit).\n\n" // This is done with the purpose of printing out 5 facts each time the function is called upon, without the need of much code //
 		"The Sun generates energy through a process called nuclear fusion, where hydrogen atoms combine to form helium, releasing vast amounts of energy.\n\n"
 		"This energy radiates outward from the core through several layers, ultimately reaching the surface and then into space as sunlight.\n\n"
 		"The Sun's surface temperature is about 5,500 degrees Celsius (9,932 degrees Fahrenheit).\n\n"
@@ -78,6 +81,8 @@ void SolFact() {
 		"Sunlight provides energy for photosynthesis, driving the growth of plants and supporting life on Earth.\n\n"
 		"The Sun has been revered by civilizations throughout history as a symbol of power, life, and divinity.\n\n"
 	};
+
+	// Every fact sheet is basically the same. They only vary when it comes to the number of facts they contain. //
 
 	StandardFactCout(10, Sol, Fact);
 }
@@ -259,8 +264,20 @@ void EarthFact() {
 	StandardFactCout(10, Earth, Fact);
 }
 
-void EarthMoonFact() {
-	EarthMoon++;
+void MoonsFact(string PlanetName) {
+	// The MoonsFact() function, depending on the PlanetName that the moon corresponds to, ... //
+	if (PlanetName == "The Earth") EarthMoonFact(); // ... either uses one of those two functions ... //
+	else if (PlanetName == "Mars") MarsMoonFact();
+	else if (PlanetName == "Jupiter") cout << JupiMoonFacts[0]; // ... or simply prints the facts by itself. //
+	else if (PlanetName == "Saturn") cout << SatMoonFacts[0];
+	else if (PlanetName == "Uranus") cout << UranMoonFacts[0];
+	else if (PlanetName == "Neptune") cout << NepMoonFacts[0];
+	else if (PlanetName == "Pluto") cout << PluMoonFacts[0];
+	else cout << "This celestial body holds no moons. Please enter a valid answer." << endl;
+}
+
+void EarthMoonFact() { // Earth's and Mars' Moon functions are an exception, because they each hold more facts than the rest of the moons and are way less in terms of numbers... //
+	EarthMoon++; // ... with Earth having only one and Mars having 2. //
 
 	string Fact[3] = {
 		"The Moon is Earth's only natural satellite, orbiting our planet at an average distance of about 239,000 miles (385,000 kilometers).\n\n"
@@ -470,7 +487,8 @@ void JupiFact() {
 	StandardFactCout(10, Jupi, Fact);
 }
 
-string JupiMoonFacts[1] = { 
+string JupiMoonFacts[1] = { // It is important to remember that the bigger Celestial bodies such as Jupiter, Saturn, Uranus and Neptune hold more moons that there are facts about //
+	// That is because the rest of the moons don't exactly have many interesting facts and are not under the lens of any major ongoing research //
 	"Io is the innermost of Jupiter's Galilean moons, Io is known for its volcanic activity, with hundreds of active volcanoes observed on its surface.\n\n"
 	"The second Galilean moon, Europa, has a smooth surface covered in ice. \nIt is believed to have a subsurface ocean of liquid water beneath its icy crust, making it a target for astrobiological research.\n\n"
 	"Ganymede is the largest moon in the solar system and the third Galilean moon. \nIt has its own magnetic field and a diverse terrain featuring cratered areas, grooved terrain, and regions with evidence of tectonic activity.\n\n"
@@ -678,7 +696,7 @@ string NepMoonFacts[1] = {
 	"Nereid: Nereid is the third-largest moon of Neptune and is much smaller than Triton and Proteus. \nIt has a highly eccentric orbit and is one of the most distant regular moons from Neptune. \nNereid's surface is thought to be heavily cratered, but its exact characteristics are still uncertain due to its distance and small size.\n\n"
 };
 
-void PluFact() {
+void PluFact() { // While Pluto is not a Planet, it is still one of the major Celestial bodies in the Solar system and deserves a place on the fact sheet //
 	Plu++;
 
 	string Fact[5] = {
@@ -713,23 +731,13 @@ void PluFact() {
 }
 
 string PluMoonFacts[1] = {
+	"Suprisingly, Pluto is big enough to hold moons, despite having a smaller surface area than Russia."
 	"Nix is a small moon of Pluto, discovered in 2005. \nIt has an irregular shape and a reddish hue, likely due to its surface composition. \nNix orbits in the same plane as Charon and Hydra, suggesting a common origin.\n\n"
 	"Hydra is similar in size and shape to Nix, also discovered in 2005. \nIt has an elongated shape and exhibits a varied surface with different geological features. \nHydra's surface composition and origin are still topics of ongoing research and study.\n\n"
 	"Charon is the largest moon of Pluto, with a diameter about half that of Pluto's. \nIt orbits very close to Pluto, and some scientists consider Pluto and Charon to be a binary system rather than a planet and its moon. \nCharon's surface is heavily cratered and features a variety of geological formations.\n\n"
 	"Styx is one of the smaller moons of Pluto, discovered in 2012. \nIt has an irregular shape and orbits between the orbits of Charon and Nix. \nStyx's surface composition and geological features are still not well understood due to limited observations.\n\n"
 	"Kerberos is the smallest and faintest of Pluto's moons, discovered in 2011. \nIt has a highly reflective surface and orbits close to Charon. \nKerberos' small size and distant orbit make it challenging to study in detail.\n\n"
 };
-
-void MoonsFact(string PlanetName) {
-	if (PlanetName == "The Earth") EarthMoonFact();
-	else if (PlanetName == "Mars") MarsMoonFact();
-	else if (PlanetName == "Jupiter") cout << JupiMoonFacts[0];
-	else if (PlanetName == "Saturn") cout << SatMoonFacts[0];
-	else if (PlanetName == "Uranus") cout << UranMoonFacts[0];
-	else if (PlanetName == "Neptune") cout << NepMoonFacts[0];
-	else if (PlanetName == "Pluto") cout << PluMoonFacts[0];
-	else cout << "This celestial body holds no moons. Please enter a valid answer." << endl;
-}
 
 void KuiperBeltFact() {
 	Kuiper++;
