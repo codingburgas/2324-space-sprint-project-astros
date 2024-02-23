@@ -13,14 +13,14 @@ void playGame2()
 	//innerPlanets, outerPlanets, withRings, withoutRings, withMoons, withoutMoons
 	string generalFacts[3] = { "Are you thinking of an inner planet?", "Does your planet have any moons?", "Does your planet have any rings?" }, answer;
 
-	centerText("PLANET AKINATOR\n");
-	centerText("Press Any Button To Continue");
+	centerText("PLANET AKINATOR\n\n");
+	centerText("Press Any Button To Continue\n");
 	cin.get();
 	cin.ignore(numeric_limits<streamsize>::max(), '\n'); //prevents it from cin-ing 2 things at once and breaking the program
 	clear();
 
-	centerText("PSA: Planet Akinator only takes planets in the Solar System into account. Yes or No answers only.\n");
-	centerText("Press Any Button To Begin");
+	centerText("PSA: Planet Akinator only takes planets in the Solar System into account. Yes or No answers only.\n\n");
+	centerText("Press Any Button To Begin\n");
 	cin.get();
 	cin.ignore(numeric_limits<streamsize>::max(), '\n'); //prevents it from cin-ing 2 things at once and breaking the program
 	clear();

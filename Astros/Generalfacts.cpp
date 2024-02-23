@@ -8,16 +8,15 @@
 using namespace std;
 
 void PrintIntro() {
-	centerText("COSMIC TRIVIA\n");
-	centerText("Press Any Button To Continue");
+	centerText("COSMIC TRIVIA\n\n");
+	centerText("Press Any Button To Continue\n");
 	// I used Zlatin's function of centerText() to add a better look to my "Game"'s Intro function //
 	cin.get();
 	clear();
 	PrintLogo();
-	cout << "Welcome to the Astros cosmic trivia machine!" << endl;
-	cout << "Here, you will be greeted with facts about the celestial bodies of our solar system." << endl;
-	cout << endl;
-	cout << "Are you ready to learn?" << endl;
+	centerText("Welcome to the Astros cosmic trivia machine!\n");
+	centerText("Here, you will be greeted with facts about the celestial bodies of our solar system.\n\n");
+	centerText("Are you ready to learn?\n");
 }
 
 // This function right here is responsible for marking out similarities (also called coincidences) between the given answer (Line 90) and all possible answers (line 43) //
@@ -37,10 +36,10 @@ int AnswerCheck(string compareto, string thiss) {
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
 void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 112-115) //
-	const int standard = 47; // The number of possible answers is set to a constant standard as it is a subject to change //
+	const int standard = 48; // The number of possible answers is set to a constant standard as it is a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Earth/Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None"};
+	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Earth/Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None", "Help"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -106,8 +105,7 @@ void AnswerInit() {
 
 	bool confirmation = true;
 	while (confirmation) {
-		cout << "Which celestial body would you like to hear about?" << endl;
-		cout << endl;
+		centerText("Which celestial body would you like to hear about?\n\n");
 
 		string answer;
 		bool mooncheck = true;
@@ -130,9 +128,10 @@ void AnswerInit() {
 			else if (answer == "Neptune") NepFact();
 			else if (answer == "Pluto") PluFact();
 			else if (answer == "Kuiper Belt") KuiperBeltFact();
+			else if (answer == "Help") Help("Game3");
 			else if (answer == "Exit") confirmation = false; // ... the programme will either stop, //
 			else if (answer == "None") ShowMenu(); // redirect the user to the Main Menu //
-			else cout << answer << "? Could you please give us a coherent answer?" << endl; // or ask them to give a coherent answer. //
+			else centerText(answer + "? Could you give us a coherent answer? \n"); // or ask them to give a coherent answer. //
 		}
 	}
 }
@@ -143,8 +142,10 @@ void YourDecision() {
 	getline(cin, decision, '\n');
 	if (decision == "Yes" or decision == "yes") AnswerInit(); // ... if you choose 'Yes' however, your will be redirected to the answer-distributing funcion "AnswerInit()" //
 	else if (decision == "No" or decision == "no") ShowMenu();
+	else if (decision == "Help") Help("Game3Decision");
 	else {
-		cout << decision << "? Could you please give us a valid answer?" << endl; 
+		//cout << decision << "? Could you please give us a valid answer?" << endl;//
+		centerText(decision + "? Could you give us a valid answer? \n");
 		YourDecision();
 	}
 	// But if you enter an invalid answer, the programme will question it and ask you to give a valid one //

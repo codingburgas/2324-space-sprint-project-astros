@@ -10,16 +10,12 @@ int Sol = 0, Merc = 0, Ven = 0, Earth = 0, EarthMoon=0, Mars = 0, MarsMoon = 0, 
 void StandardFactCout(int FactCount, int &CelestialBody, string Fact[]) {
 	//This is the standard Fact-Printing function //
 	for (int i = CelestialBody - 1; i < CelestialBody; i++) { // Based on the given name of the Celestial Body... //
-		if (i == FactCount) { // ... and the maximum fact count, it prints a corresponding answer // 
-			cout << endl;
-			cout << "There aren't any more facts to offer about this celestial body" << endl; // Those two lines are printed every time the user reaches the limit of the fact sheet and the //
-			cout << "Note: The counter will reset and the facts will be repeated all over again." << endl; // programme can no longer print out any new facts // 
-			cout << endl;
+		if (i == FactCount) { // ... and the maximum fact count, it prints a corresponding answer: // 
+			centerText("\nThere aren't any more facts to offer about this celestial body\nNote: The counter will reset and the facts will be repeated all over again.\n");
 			CelestialBody = 0; // If that's the case, the fact counter is reset to 0 //
 		}
 		else { // But if that's not the case, it simply prints a set of 5 facts and separates it with a new line //
-			cout << Fact[i]; 
-			cout << endl;
+			cout << Fact[i] << endl; // Facing an issue here. Do NOT run!//
 		}
 	}
 }
@@ -34,8 +30,8 @@ void SolFact() {
 		"It is located at the center of our solar system, with the planets orbiting around it.\n\n"
 		"The Sun's diameter is about 109 times that of Earth.\n\n"
 		"Its mass is approximately 330,000 times that of Earth.\n\n"
-		"The Sun is composed mainly of hydrogen (about 75%) and helium (about 24%) by mass.\n\n", // As you can see (check Line 32 also), there is a comma only every 5 facts. //
-		"Its core is incredibly hot, reaching temperatures of about 15 million degrees Celsius (27 million degrees Fahrenheit).\n\n" // This is done with the purpose of printing out 5 facts each time the function is called upon, without the need of much code //
+		"The Sun is composed mainly of hydrogen (about 75%) and helium (about 24%) by mass.\n\n", // As you can see, there is a comma only every 5 facts. //
+		"Its core is incredibly hot, reaching temperatures of about 15 million degrees Celsius (27 million degrees Fahrenheit).\n\n" // This is done with the purpose of printing out 5 facts every time the StandardFactCout() function calls upon this string array, without the need of much code //
 		"The Sun generates energy through a process called nuclear fusion, where hydrogen atoms combine to form helium, releasing vast amounts of energy.\n\n"
 		"This energy radiates outward from the core through several layers, ultimately reaching the surface and then into space as sunlight.\n\n"
 		"The Sun's surface temperature is about 5,500 degrees Celsius (9,932 degrees Fahrenheit).\n\n"
@@ -264,26 +260,14 @@ void EarthFact() {
 	StandardFactCout(10, Earth, Fact);
 }
 
-void MoonsFact(string PlanetName) {
-	// The MoonsFact() function, depending on the PlanetName that the moon corresponds to, ... //
-	if (PlanetName == "The Earth") EarthMoonFact(); // ... either uses one of those two functions ... //
-	else if (PlanetName == "Mars") MarsMoonFact();
-	else if (PlanetName == "Jupiter") cout << JupiMoonFacts[0]; // ... or simply prints the facts by itself. //
-	else if (PlanetName == "Saturn") cout << SatMoonFacts[0];
-	else if (PlanetName == "Uranus") cout << UranMoonFacts[0];
-	else if (PlanetName == "Neptune") cout << NepMoonFacts[0];
-	else if (PlanetName == "Pluto") cout << PluMoonFacts[0];
-	else cout << "This celestial body holds no moons. Please enter a valid answer." << endl;
-}
-
 void EarthMoonFact() { // Earth's and Mars' Moon functions are an exception, because they each hold more facts than the rest of the moons and are way less in terms of numbers... //
 	EarthMoon++; // ... with Earth having only one and Mars having 2. //
 
 	string Fact[3] = {
-		"The Moon is Earth's only natural satellite, orbiting our planet at an average distance of about 239,000 miles (385,000 kilometers).\n\n"
-		"Its diameter is about one-quarter of Earth's, making it the fifth-largest moon in the solar system relative to its planet.\n\n"
-		"The Moon's surface is covered in a fine layer of powdery dust and rocky debris called regolith.\n\n"
-		"It lacks a significant atmosphere, allowing sunlight to directly reach its surface and causing extreme temperature variations.\n\n"
+		"The Moon is Earth's only natural satellite, orbiting our planet at an average distance of about 239,000 miles (385,000 kilometers).\n\n" 
+		"Its diameter is about one-quarter of Earth's, making it the fifth-largest moon in the solar system relative to its planet.\n\n" 
+		"The Moon's surface is covered in a fine layer of powdery dust and rocky debris called regolith.\n\n" 
+		"It lacks a significant atmosphere, allowing sunlight to directly reach its surface and causing extreme temperature variations.\n\n" 
 		"The Moon's gravity is about one-sixth that of Earth's, making it possible for astronauts to perform spectacular leaps and jumps.\n\n",
 		"Lunar days (days/nights) last about 29.5 Earth days due to the Moon's synchronous rotation, meaning it takes the same amount of time to complete one orbit around Earth as it does to rotate once on its axis.\n\n"
 		"The Moon's surface is marked by vast plains called maria (singular: mare), formed by ancient volcanic activity billions of years ago.\n\n"
@@ -555,7 +539,7 @@ void SatFact() {
 	StandardFactCout(10, Sat, Fact);
 }
 
-string SatMoonFacts[1] = {
+string SatMoonFacts[1] = { 
 	"Titan is the largest moon of Saturn and the second-largest moon in the solar system. \nTitan is unique due to its thick atmosphere primarily composed of nitrogen, with traces of methane and ethane. \nIt also has seas of liquid hydrocarbons on its surface, making it one of the most Earth-like bodies in the solar system.\n\n"
 	"Rhea is the second-largest moon of Saturn and has a heavily cratered surface, indicating its ancient age. \nIt has a relatively bright surface, composed primarily of water and ice.\n\n"
 	"Iapetus is known for its stark contrast in surface brightness, with one hemisphere being much darker than the other. \nThis leads to its nickname, the 'yin-yang moon.' Its dark side is covered in a layer of dark material, possibly derived from organic compounds.\n\n"
@@ -771,4 +755,16 @@ void KuiperBeltFact() {
 	};
 
 	StandardFactCout(5, Kuiper, Fact);
+}
+
+void MoonsFact(string PlanetName) {
+	// The MoonsFact() function, depending on the PlanetName that the moon corresponds to, ... //
+	if (PlanetName == "The Earth") EarthMoonFact(); // ... either uses one of those two functions ... //
+	else if (PlanetName == "Mars") MarsMoonFact();
+	else if (PlanetName == "Jupiter") cout << JupiMoonFacts[0]; // ... or simply prints the facts by itself. //
+	else if (PlanetName == "Saturn") cout << SatMoonFacts[0];
+	else if (PlanetName == "Uranus") cout << UranMoonFacts[0];
+	else if (PlanetName == "Neptune") cout << NepMoonFacts[0];
+	else if (PlanetName == "Pluto") cout << PluMoonFacts[0];
+	else cout << "This celestial body holds no moons. Please enter a valid answer." << endl;
 }

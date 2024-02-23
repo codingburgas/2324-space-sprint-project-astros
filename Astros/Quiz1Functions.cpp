@@ -5,6 +5,7 @@
 #include "QuestionsGame1.h"
 #include "GlobalFunctions.h"
 #include <iostream>
+#include <string>
 #include <cstdlib>  
 #include <ctime>  
 
@@ -12,8 +13,8 @@ using namespace std;
 
 void PrintGame1Header()
 {
-    centerText("ASTRONOMY QUIZ\n");
-    centerText("Press Any Button To Continue");
+    centerText("ASTRONOMY QUIZ\n\n");
+    centerText("Press Any Button To Continue\n");
     cin.get();
     clear();
     PrintLogo();
@@ -22,7 +23,7 @@ void PrintGame1Header()
 
 void PrintGame1Rules()
 {
-    cout << "Towa sa pravilata na igrata..." << endl;
+    centerText("Tova sa pravilata na igrata: \n");
 }
 
 int fiftyFifty(int rightAnswer) {
@@ -47,8 +48,7 @@ void printFiftyFifty(int rightAnswer) {
         numbers[1] = rightAnswer;
     }
 
-    cout << "The right answer is either " << numbers[0]
-        << " or " << numbers[1] << ".\n";
+    cout << "The right answer is either " << numbers[0] << " or " << numbers[1] << ".\n";
 }
 
 int makeQuiz()
