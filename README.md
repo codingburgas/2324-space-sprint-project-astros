@@ -1,4 +1,4 @@
-<h1 align="center">Gingerbreads</h1>
+<h1 align="center">Astros</h1>
 
 <p align = "center">
   <img src="logo/logo-final.png" alt="Astros's Logo"/>
