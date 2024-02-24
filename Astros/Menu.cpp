@@ -10,13 +10,14 @@ using namespace std;
 
 void ShowMenu()
 {
+	FullScreen();
 	clear();
 	PrintLogo();
-	cout << "Choose your game: 1, 2 or 3 " << endl;
-	cout << "1. Astronomy Quiz: " << endl;
-	cout << "2. Planet Akinator: " << endl;
-	cout << "3. Cosmic Trivia: " << endl;
-	cout << "4. Guess The Word: " << endl;
+	centerText("Choose your game: 1, 2 or 3 \n\n");
+	centerText("1. Astronomy Quiz: \n\n");
+	centerText("2. Planet Akinator: \n\n");
+	centerText("3. Cosmic Trivia:  \n\n");
+	centerText("4. Guess The Word: \n\n");
 
 	string choice;
 	bool timetochoose = true;
@@ -36,14 +37,12 @@ void ShowMenu()
 			playGame3();
 			timetochoose = false;
 		}
-		else if (choice == "4") {
+		else if (choice == "4" || choice == "Guess The Word") {
 			playGame4();
 			timetochoose = false;
 		}
-		else if (choice == "0" || choice == "Exit" or choice == "No") {
-			timetochoose = false;
-		}
-
-		else cout << "There is no such choice! Please enter a number between 1 and 3" << endl;
+		else if (choice == "0" or choice == "Exit" or choice == "No" or choice == "Quit" or choice == "Leave") timetochoose = false;
+		else if (choice == "Help" or choice == "Keywords") Help("Menu");
+		else centerText("There is no such choice! Please enter a number between 1 and 4 or the name of the game. \n\n");
 	} 
 }

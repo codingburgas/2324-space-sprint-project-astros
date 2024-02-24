@@ -10,6 +10,4 @@ void playGame3()
 {
 	PrintIntro();
 	YourDecision();
-	cin.get();
-	ShowMenu();
 }

@@ -6,6 +6,6 @@ using namespace std;
 
 void PrintIntro();
 int AnswerCheck(string compareto, string thiss); 
-string AnswerCorrect(string answ); 
+void AnswerCorrect(string &answ, bool &moon); 
 void AnswerInit();
 void YourDecision();

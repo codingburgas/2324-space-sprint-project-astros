@@ -47,8 +47,8 @@ void PrintGame4Rules()
 
 void PrintGame4Header()
 {
-    centerText("ASTRONOMY QUIZ\n");
-    centerText("Press Any Button To Continue");
+    centerText("GUESS THE WORD\n\n");
+    centerText("Press Any Button To Continue\n");
     cin.get();
     clear();
     PrintLogo();
@@ -57,6 +57,8 @@ void PrintGame4Header()
 
 void playGame4()
 {
+    PrintGame4Header();
+
     // Seed the random number generator
     srand(time(0));
 
@@ -76,21 +78,27 @@ void playGame4()
 
     // Interact with the player
     for (int i = 0; i < SPACE_WORDS_COUNT; i++) {
-        cout << "Guess the word: " << shuffledWords[i] << endl;
+        // cout << "Guess the word: " << shuffledWords[i] << endl; //
+        centerText("Guess the word: " + shuffledWords[i] + '\n');
         string guess;
         cin >> guess;
         guess = toLowerCase(guess);
 
         // Check if the guess is correct (case-insensitively)
         if (guess == toLowerCase(SPACE_WORDS[i])) {
-            cout << "Correct!" << endl;
+            //cout << "Correct!" << endl;//
+            centerText("Correct!\n");
             score++;
         }
         else {
-            cout << "Wrong! The correct word was " << SPACE_WORDS[i] << endl;
+            //cout << "Wrong! The correct word was " << SPACE_WORDS[i] << endl;//
+            centerText("Wrong! The correct word was " );
+            cout << SPACE_WORDS[i] << endl;
         }
     }
 
     // Output the player's score
-    cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;
+    //cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;//
+    centerText("Your score: ");
+    cout << score << "/" << SPACE_WORDS_COUNT << endl;
 }
