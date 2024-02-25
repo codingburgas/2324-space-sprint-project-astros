@@ -7,10 +7,14 @@
 #include "Game4.h"
 #include "GlobalFunctions.h"
 using namespace std;
-
+bool firsttimerun = true;
 void ShowMenu()
 {
-	FullScreen();
+	if (firsttimerun)
+	{
+		FullScreen();
+	}
+	firsttimerun = false;
 	clear();
 	PrintLogo();
 	centerText("Choose your game: 1, 2, 3 or 4 \n\n");
