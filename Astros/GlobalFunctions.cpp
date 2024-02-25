@@ -1,6 +1,7 @@
 #include "GlobalFunctions.h"
 #include "Quiz1Functions.h"
 #include <iostream>
+#include <iomanip>
 #include <stdlib.h>
 #include <string>
 #include <windows.h>	

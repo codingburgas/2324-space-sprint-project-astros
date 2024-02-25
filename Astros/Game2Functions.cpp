@@ -17,13 +17,16 @@ int randomNumberGenerator(int from, int to) {
 
 void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) {
     rng = randomNumberGenerator(0, 1);
-    cout << secondRoundSustainWeatherSystem[rng];
+    centerText(secondRoundSustainWeatherSystem[rng]);
+    cout << endl;
     string answer;
     getline(cin, answer);
     while (answer != "Yes" and answer != "No") {
         clear();
-        cout << "Invalid Answer! Please type either \"Yes\" or \"No\"." << endl;
-        cout << secondRoundSustainWeatherSystem[rng] << endl;
+        centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+        cout << endl;
+        centerText(secondRoundSustainWeatherSystem[rng]);
+        cout << endl;
         getline(cin, answer);
     }
     switch (rng) {
@@ -49,3 +52,4 @@ void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) {
         break;
     }
 }
+
