@@ -48,7 +48,7 @@ int getConsoleWidth() {
     return width;
 }
 
-void centerText(std::string text) {
+void centerText(string text) {
     int consoleWidth = getConsoleWidth();
     int paddingLeft = (consoleWidth - text.length()) / 2;
     if (paddingLeft < 0) paddingLeft = 0;
