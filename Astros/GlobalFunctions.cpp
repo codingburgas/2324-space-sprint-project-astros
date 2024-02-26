@@ -7,7 +7,8 @@
 #include <windows.h>	
 using namespace std;
 void PrintLogo() {
-    centerText("                                                                                                                        \n");
+    cout << "\n\n\n";
+    ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
     centerText(" .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. \n");
     centerText(" | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |\n");
     centerText("| |      __      | || |    _______   | || |  _________   | || |  _______     | || |     ____     | || |    _______   | |\n");
@@ -19,7 +20,8 @@ void PrintLogo() {
     centerText("| |              | || |              | || |              | || |              | || |              | || |              | |\n");
     centerText("| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |\n");
     centerText(" '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' \n");
-    cout << endl;
+    ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+    cout << "\n\n\n";
 }
 
 void FullScreen() {
@@ -27,7 +29,7 @@ void FullScreen() {
     keybd_event(VK_RETURN, 0x1c, 0, 0);
     keybd_event(VK_RETURN, 0x1c, KEYEVENTF_KEYUP, 0);
     keybd_event(VK_MENU, 0x38, KEYEVENTF_KEYUP, 0);
-    cout << "Note: If you need help with the programme, type \"Help\". \n";
+    cout << "Note: If you need help with the programme, type \"Help\" where possible.\n";
     system("pause");
 }
 
@@ -58,24 +60,7 @@ void centerText(string text) {
 }
 
 void Help(string GameName) {
-    if (GameName == "Menu") {
-        centerText("In the Menu, there are a total of thirteen possible answers, which include:\n");
-        centerText("Exit, Quit, Leave, No or 0 - to stop the programme;\n");
-        centerText("Astronomy Quiz or 1 - redirects you to the Astronomy Quiz;\n");
-        centerText("Planet Akinator or 2 - redirects you to Planet Akinator;\n");
-        centerText("Cosmic Trivia or 3 - redirects you to the Cosmic Trivia;\n");
-        centerText("Guess The Word or 4 - redirects you to Guess The Word;\n\n");
-        centerText("Understand?\n\n");
-        cin.get();
-    }
-    else if (GameName == "Game1") {
-        PrintGame1Rules();
-        centerText("\nPossible Keywords include:\n");
-        centerText("1, 2, 3, 4\n");
-        centerText("\nUnderstand?\n\n");
-        cin.get();
-    }
-    else if (GameName == "Game2") {
+    if (GameName == "Game2") {
         centerText("Zlatine, zashto ne napisa pravilata?\n\n");
     }
     else if (GameName == "Game3Decision") {
@@ -83,8 +68,6 @@ void Help(string GameName) {
         centerText("Responding with Yes (Lowercase and Capital Y), will redirect you to the Celestial Body selector\n");
         centerText("Responding with No (Lowercase and Capital N), will redirect you to the Main menu\n");
         centerText("Alternatively, you could respond with Exit to stop the programme entiretly\n");
-        centerText("Understand?\n\n");
-        cin.get();
     }
     else if (GameName == "Game3") {
         centerText("Here, you select what Celsetial Body you'd like to hear facts about.\n");
@@ -111,13 +94,13 @@ void Help(string GameName) {
         centerText("Alternatively, you could respond with None to be redirected back to the Menu;\n");
         centerText("Or simply type Exit to stop the programme;\n\n");
         centerText("If your answer doesn't fit in any of the beforementioned criteria, the programme will treat it as incoherent;\n\n");
-        centerText("Understood?\n\n");
-        cin.get();
     }
     else if (GameName == "Game4") {
-        centerText("Here, the programme prints out a word whose letters are reordered in a way that makes it lose its meaning\n");
-        centerText("Your task is to write the word the way it's originally meant to be written\n");
-        centerText("Understand?\n\n");
-        cin.get();
+        centerText("Here, the programme prints out a word whose letters have been reordered in a way that makes it lack meaning\n");
+        centerText("Your task is to rewrite the word the way it's originally meant to be written\n");
     }
+}
+
+void ChangeColor(HANDLE Output, int Color) {
+    SetConsoleTextAttribute(Output, Color);
 }

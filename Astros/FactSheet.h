@@ -15,10 +15,15 @@ void MarsFact();
 void MarsMoonFact();
 void AsteroidBeltFact();
 void JupiFact();
+void PrintJupiMoonFacts();
 void SatFact();
+void PrintSatMoonFacts();
 void UranFact();
+void PrintUranMoonFacts();
 void NepFact();
+void PrintNepMoonFacts();
 void PluFact();
+void PrintPluMoonFacts();
 
 void MoonsFact(string PlanetName);
 

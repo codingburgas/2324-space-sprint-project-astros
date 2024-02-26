@@ -49,7 +49,7 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 
 	// If there are too many or too little coincidences however, the function cancels them out by setting their value to 0. //
 	for (int i = 0; i < standard; i++) {
-		if (PosCon[i] > int(PosAnsw[i].length()) or PosCon[i] < int(PosAnsw[i].length()) - int((PosAnsw[i].length()) / 2)) PosCon[i] = 0;
+		if (PosCon[i] > int(PosAnsw[i].length()) or PosCon[i] < (int(PosAnsw[i].length()) - (int(PosAnsw[i].length()) / 2)) ) PosCon[i] = 0;
 	}
 
 	string SaveResult; // This variable is used to save the value of the possible answer with the most similarities to the given answer //
@@ -80,8 +80,10 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 	else if (SaveIndex >= 38 and SaveIndex <= 43) SaveIndex = 37;
 	else moon = false;
 
-	max = int(PosAnsw[SaveIndex].length());
-	PosCon[SaveIndex] = max;
+	if (moon) {
+		max = int(PosAnsw[SaveIndex].length());
+		PosCon[SaveIndex] = max;
+	}
 
 	// This loop comes in handy in case there is another possible answer with just as many coincidences as the highest number of coincidences //
 	for (int i = 0; i < standard; i++) {
