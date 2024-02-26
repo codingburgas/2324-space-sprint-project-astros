@@ -6,7 +6,7 @@
 #include <string>
 #include <windows.h>	
 using namespace std;
-void PrintLogo() {
+void PrintLogo() { //logo
     cout << "\n\n\n";
     ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
     centerText(" .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. \n");

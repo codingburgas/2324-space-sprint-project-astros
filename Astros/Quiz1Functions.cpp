@@ -8,7 +8,7 @@
 #include <string>
 #include <cstdlib>  
 #include <ctime>  
-#include <conio.h>
+#include <conio.h> //it includes inbuilt functions like getch() and clrscr()
 #include <Windows.h>
 
 using namespace std;
@@ -148,7 +148,7 @@ int makeQuiz()
                 }
                 else if (SelectedOption == 4) {
                 }
-                else if (SelectedOption == rightAnswers[i]) {
+                else if (SelectedOption == rightAnswers[i]) { 
                     centerText("Correct! \n\n\n");
                     jokerMode = false;
                     score++;

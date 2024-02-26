@@ -1,7 +1,7 @@
 #pragma once
-const int NUM_QUESTIONS = 10;
+const int NUM_QUESTIONS = 10; //the number of questions
 
-const char* const questions[NUM_QUESTIONS] = {
+const char* const questions[NUM_QUESTIONS] = {  //questions
     "Largest planet in our solar system?",
     "Time it takes for Earth to orbit the Sun?",
     "What is a supernova?",
@@ -14,7 +14,7 @@ const char* const questions[NUM_QUESTIONS] = {
     "What causes a solar eclipse?"
 };
 
-const char* const answers[NUM_QUESTIONS][4] = {
+const char* const answers[NUM_QUESTIONS][4] = { //answers
     { "Earth", "Mars", "Jupiter", "Saturn" },
     { "24 hours", "365 days", "28 days", "12 years" },
     { "A star that is being formed.", "The explosion of a star at the end of its life cycle.", "A black hole swallowing a star.", "A comet passing by the Earth." },
@@ -27,4 +27,4 @@ const char* const answers[NUM_QUESTIONS][4] = {
     { "The Moon passing between the Earth and the Sun", "The Earth passing between the Sun and the Moon", "The Sun moving behind the Earth", "Jupiter blocking the Sun's rays from reaching the Earth" }
 };
 
-const int rightAnswers[NUM_QUESTIONS] = { 2, 1, 1, 1, 1, 3, 1, 0, 0, 0 };
+const int rightAnswers[NUM_QUESTIONS] = { 2, 1, 1, 1, 1, 3, 1, 0, 0, 0 }; //the correct answers

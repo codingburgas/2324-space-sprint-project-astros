@@ -112,8 +112,10 @@ void AnswerInit() {
 		string answer;
 		bool mooncheck = true;
 
+		cout << string((getConsoleWidth() / 2) - 5, ' ');
 		getline(cin, answer, '\n');
 		cout << endl;
+
 		AnswerCorrect(answer, mooncheck); // Depending on the values of "answer" and "mooncheck" (After they have been processed by AnswerCorrect()), the function prints out a set of facts from FactSheet.cpp //
 
 		if (mooncheck) MoonsFact(answer); // If it has been confirmed by Answercorrect() that the given answer is a moon and not a planet, the MoonsFact() function is activated //
@@ -141,6 +143,8 @@ void AnswerInit() {
 // This function basically "decides" whether or not you proceed wtih Game 3. If you choose 'No', it redirects you back to the starting menu... //
 void YourDecision() {
 	string decision;
+	
+	cout << string((getConsoleWidth() / 2) - 5, ' ');
 	getline(cin, decision, '\n');
 	if (decision == "Yes" or decision == "yes") AnswerInit(); // ... if you choose 'Yes' however, your will be redirected to the answer-distributing funcion "AnswerInit()" //
 	else if (decision == "No" or decision == "no") ShowMenu();

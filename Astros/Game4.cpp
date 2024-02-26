@@ -82,6 +82,8 @@ void playGame4()
         // cout << "Guess the word: " << shuffledWords[i] << endl; //
         centerText("Guess the word: " + shuffledWords[i] + '\n');
         string guess;
+        
+        cout << string((getConsoleWidth() / 2) - 5, ' '); //Center the output
         cin >> guess;
         guess = toLowerCase(guess);
 
@@ -92,6 +94,9 @@ void playGame4()
             PrintLogo();
             centerText("Correct!\n");
             score++;
+        }
+        else if (guess == "help") {
+            Help("Game4");
         }
         else {
             //cout << "Wrong!<< endl;
