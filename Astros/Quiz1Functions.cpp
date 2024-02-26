@@ -20,12 +20,11 @@ void PrintGame1Header()
     cin.get();
     clear();
     PrintLogo();
-    PrintGame1Rules();
 }
 
 void PrintGame1Rules()
 {
-    centerText("Choose the answer you think is correct for each question. You are entitled to 3 jokers - 50:50. If you need them, enter ? \n");
+    centerText("Choose the answer you think is correct for each question. You are entitled to 3 Hints - 50:50. If you need them, enter ? \n");
 }
 
 int fiftyFifty(int rightAnswer) {
@@ -64,49 +63,57 @@ int makeQuiz()
     int i = 0;
     int max = 1;
     int SelectedOption = 0;
-    HANDLE Output = GetStdHandle(STD_OUTPUT_HANDLE);
 
     while (i < max && max < 11) {
         bool timeToAnswer = true;
         centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
         while (timeToAnswer) {
+            clear();
+            PrintLogo();
+            centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
             for (int j = 0; j < 5; j++) {
                 if (j == 4) {
                     if (SelectedOption == j) {
-                        SetConsoleTextAttribute(Output, 3);
+                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
                         if (jokersUsed < 3) {
-                            centerText("Use joker " + to_string(jokersUsed) + "\n");
+                            centerText("Use a Hint " + to_string(jokersUsed) + "/3" "\n");
                         }
                         else {
-                            centerText("No mode jokers!\n");
+
+                            centerText("No more Hints!\n");
                         }
-                        SetConsoleTextAttribute(Output, 7);
+                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                     }
                     else {
                         if (jokersUsed < 3) {
-                            centerText("Use joker " + to_string(jokersUsed) + "\n");
+                            centerText("Use a Hint " + to_string(jokersUsed) + "/3" + "\n");
                         }
                         else {
-                            centerText("No mode jokers!\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 13);
+                            centerText("No more Hints!\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
                     }
                     centerText("Your answer (1-4): \n");
                 }
                 else {
                     if (SelectedOption == j) {
-                        SetConsoleTextAttribute(Output, 3);
                         if (jokerMode && j != otherWrong && j != rightAnswers[i]) {
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 4);
                             centerText("Wrong answer!!!\n\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
                         else {
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
                             centerText(to_string(j + 1) + ". " + answers[i][j] + "\n\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
-                        
-                        SetConsoleTextAttribute(Output, 7);
                     }
                     else {
                         if (jokerMode && j != otherWrong && j != rightAnswers[i]) {
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 4);
                             centerText("Wrong answer!!!\n\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
                         else {
                             centerText(to_string(j + 1) + ". " + answers[i][j] + "\n\n");
@@ -118,45 +125,35 @@ int makeQuiz()
             if (key == 72) {
                 if (SelectedOption - 1 < 0) SelectedOption = 4;
                 else SelectedOption -= 1;
-                clear();
-                PrintLogo();
-                centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
             }
             else if (key == 80) {
                 if (SelectedOption + 1 > 5) SelectedOption = 0;
                 else SelectedOption += 1;
-                clear();
-                PrintLogo();
-                centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
+            }
+            else if (key == 88 or key == 120) {
+                return 0;
             }
             else if (key == 13) {
                 if (SelectedOption == 4 && jokersUsed < 3) {
                     jokersUsed++;
                     jokerMode = true;
                     otherWrong = fiftyFifty(rightAnswers[i]);
-                    clear();
-                    PrintLogo();
-                    centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
 
                 }
                 else if (SelectedOption == 4) {
-                    clear();
-                    PrintLogo();
-                    centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
                 }
                 else if (SelectedOption == rightAnswers[i]) {
-                    centerText("Correct! \n");
+                    centerText("Correct! \n\n\n");
                     jokerMode = false;
                     score++;
                 }
                 else {
                     jokerMode = false;
-                    centerText("Wrong. The correct answer is " + to_string(rightAnswers[i] + 1) + ".\n");
+                    centerText("Wrong. The correct answer is " + to_string(rightAnswers[i] + 1) + ".\n\n\n");
                 }
                 if (SelectedOption != 4) {
                     i++;
                     max++;
-                    system("pause");
                     PrintGame1Header();
                     timeToAnswer = false;
                 }
