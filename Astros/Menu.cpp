@@ -32,7 +32,7 @@ void ShowMenu()
 		PrintLogo();
 		for (int i = 0; i < 5; i++) {
 			if (i == SelectedGame) {
-				ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 10);
+				ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 				PrintMenuOption(MenuOptions[i]);
 				ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
 			}
