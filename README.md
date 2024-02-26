@@ -9,7 +9,8 @@
 
 
 ## 📋 Description
-  
+  Offering a variety of mini-games and interactive planetary lore, take this new command blocking system developed by highly skilled engineers on a whirlwind adventure through the universe in. 
+  The program offers replayability and fun learning experiences for all ages.
 
 
 ## 🚀 Languages 
