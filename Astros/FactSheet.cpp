@@ -808,5 +808,4 @@ void MoonsFact(string PlanetName) {
 	else if (PlanetName == "Uranus") PrintUranMoonFacts();
 	else if (PlanetName == "Neptune") PrintNepMoonFacts();
 	else if (PlanetName == "Pluto") PrintPluMoonFacts();
-	else cout << "This celestial body holds no moons. Please enter a valid answer." << endl;
 }
