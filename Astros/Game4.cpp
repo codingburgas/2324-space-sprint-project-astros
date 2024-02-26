@@ -88,19 +88,21 @@ void playGame4()
         // Check if the guess is correct (case-insensitively)
         if (guess == toLowerCase(SPACE_WORDS[i])) {
             //cout << "Correct!" << endl;//
+            clear();
+            PrintLogo();
             centerText("Correct!\n");
             score++;
         }
         else {
-            //cout << "Wrong! The correct word was " << SPACE_WORDS[i] << endl;//
-            centerText("Wrong! The correct word was " );
-            cout << SPACE_WORDS[i] << endl;
+            //cout << "Wrong!<< endl;
+            clear();
+            PrintLogo();
+            centerText("Wrong!\n");
         }
     }
     // Output the player's score
     //cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;//
-    centerText("Your score: ");
-    cout << score << "/" << SPACE_WORDS_COUNT << endl;
+    centerText("Your score: " + to_string(score));
     cin.get();
     ShowMenu();
 }

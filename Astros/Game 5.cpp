@@ -7,8 +7,7 @@ using namespace std;
 
 void game5()
 {
-    bool check(char* pass, char* secret)
-    {
+    bool check(char* pass, char* secret){
         if (strcmp(pass, secret) == 0) {
             return true;
         }
