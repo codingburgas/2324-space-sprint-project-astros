@@ -23,24 +23,26 @@ void PrintGame1Header()
     PrintGame1Rules();
 }
 
-void PrintGame1Rules()
+void PrintGame1Rules() //Rules
 {
     centerText("Choose the answer you think is correct for each question. You are entitled to 3 jokers - 50:50. If you need them, enter ? \n");
 }
 
-int fiftyFifty(int rightAnswer) {
+
+int fiftyFifty(int rightAnswer) { 
     int otherWrong;
     do {
-        otherWrong = rand() % 4;
+        otherWrong = rand() % 4; //rand() generate a series of random numbers
     } while (otherWrong == rightAnswer);
 
     return otherWrong;
 }
 
+//Use joker
 void printFiftyFifty(int rightAnswer) {
     int otherWrong = fiftyFifty(rightAnswer) + 1;
     rightAnswer++;
-    int numbers[2];
+    int numbers[2]; //the right one and one wrong answer
     if (rightAnswer < otherWrong) {
         numbers[0] = rightAnswer;
         numbers[1] = otherWrong;
@@ -59,26 +61,30 @@ int makeQuiz()
 
     bool jokerMode = false;
     int otherWrong = -1;
-    srand(time(0));
+    
+    /*It is preferred to use the result of a call to time(0) as the seed. 
+    The time() function returns the number of seconds since 00:00 hours, Jan 1, 
+    1970 UTC (i.e. the current unix timestamp). As a result, the value of seed changes with time.*/
+    srand(time(0)); 
 
     int i = 0;
     int max = 1;
     int SelectedOption = 0;
-    HANDLE Output = GetStdHandle(STD_OUTPUT_HANDLE);
+    HANDLE Output = GetStdHandle(STD_OUTPUT_HANDLE); //The GetStdHandle() function gives us a mechanism for retrieving the standard input
 
     while (i < max && max < 11) {
         bool timeToAnswer = true;
-        centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
+        centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n"); //The question
         while (timeToAnswer) {
-            for (int j = 0; j < 5; j++) {
+            for (int j = 0; j < 5; j++) { //The options to answer
                 if (j == 4) {
                     if (SelectedOption == j) {
                         SetConsoleTextAttribute(Output, 3);
                         if (jokersUsed < 3) {
-                            centerText("Use joker " + to_string(jokersUsed) + "\n");
+                            centerText("Use joker " + to_string(jokersUsed) + "\n"); //Use joker 
                         }
                         else {
-                            centerText("No mode jokers!\n");
+                            centerText("No mode jokers!\n"); // Used more than 3 jokers
                         }
                         SetConsoleTextAttribute(Output, 7);
                     }
@@ -114,22 +120,22 @@ int makeQuiz()
                     }
                 }
             }
-            char key = _getch();
-            if (key == 72) {
+            char key = _getch(); //_getch reads a single character from the keyboard.
+            if (key == 72) { // up
                 if (SelectedOption - 1 < 0) SelectedOption = 4;
                 else SelectedOption -= 1;
                 clear();
                 PrintLogo();
                 centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
             }
-            else if (key == 80) {
+            else if (key == 80) { //down
                 if (SelectedOption + 1 > 5) SelectedOption = 0;
                 else SelectedOption += 1;
                 clear();
                 PrintLogo();
                 centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
             }
-            else if (key == 13) {
+            else if (key == 13) { //enter
                 if (SelectedOption == 4 && jokersUsed < 3) {
                     jokersUsed++;
                     jokerMode = true;
