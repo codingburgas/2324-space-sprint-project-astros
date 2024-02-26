@@ -49,9 +49,107 @@ void playGame2()
 	if (rng1 == 0) {
 		if (answer == "Yes") {
 			int Mercury = 0, Venus = 0, Earth = 0, Mars = 0;
+			questionTwoInnerOuterPlanets(Earth, Mars, Mercury, Venus);
+			cout << endl;
+			clear();
+
+			int arr[4] = { Earth,Mars,Mercury, Venus };
+			int index[4] = { 2,3,0,1 };
+
+
+			for (int i = 0; i < 4; i++) {
+				if (arr[i] != 0) {
+					centerText(planetSpecificFacts[index[i]][randomNumberGenerator(0, 1)]);
+					cout << endl;
+					getline(cin, answer);
+					clear();
+
+					while (answer != "Yes" && answer != "No") {
+						centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+						centerText(planetSpecificFacts[index[i]][randomNumberGenerator(0, 1)]);
+						cout << endl;
+						getline(cin, answer);
+						clear();
+					}
+
+					if (answer == "Yes") {
+						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
+						getline(cin, answer);
+
+						if (answer == "Yes")
+						{
+							clear();
+							centerText("Haha! I knew it! Do you dare challenge me again?");
+							getline(cin, answer);
+							if (answer == "Yes") playGame2();
+							clear();
+							ShowMenu();
+						}
+
+						else {
+							clear();
+							centerText("Ugh! Would you like to give me another chance?");
+							getline(cin, answer);
+							if (answer == "Yes") playGame2();
+							clear();
+							ShowMenu();
+						}
+
+					}
+				}
+			}
 		}
 		else {
 			int	Jupiter = 0, Saturn = 0, Uranus = 0, Neptune = 0;
+			questionTwoInnerOuterPlanets(Uranus, Neptune, Jupiter, Saturn);
+			cout << endl;
+			clear();
+
+			int arr[4] = { Uranus,Neptune,Jupiter,Saturn };
+			int index[4] = { 6,7,4,5 };
+
+
+			for (int i = 0; i < 4; i++) {
+				if (arr[i] != 0) {
+					centerText(planetSpecificFacts[index[i]][randomNumberGenerator(0, 1)]);
+					cout << endl;
+					getline(cin, answer);
+					clear();
+
+					while (answer != "Yes" && answer != "No") {
+						centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+						centerText(planetSpecificFacts[index[i]][randomNumberGenerator(0, 1)]);
+						cout << endl;
+						getline(cin, answer);
+						clear();
+					}
+
+					if (answer == "Yes") {
+						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
+						getline(cin, answer);
+
+						if (answer == "Yes")
+						{
+							clear();
+							centerText("Haha! I knew it! Do you dare challenge me again?");
+							getline(cin, answer);
+							if (answer == "Yes") playGame2();
+							clear();
+							ShowMenu();
+						}
+
+						else {
+							clear();
+							centerText("Ugh! Would you like to give me another chance?");
+							getline(cin, answer);
+							if (answer == "Yes") playGame2();
+							clear();
+							ShowMenu();
+						}
+
+					}
+				}
+			}
 		}
 	}
 
@@ -75,7 +173,8 @@ void playGame2()
 
 					while (answer != "Yes" && answer != "No") {
 						centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
-						cout << starterQuestions[rng1] << endl;
+						centerText(planetSpecificFacts[index[i]][randomNumberGenerator(0, 1)]);
+						cout << endl;	
 						getline(cin, answer);
 						clear();
 					}
@@ -135,7 +234,7 @@ void playGame2()
 					}
 					
 					if (answer == "Yes") {
-						centerText("Is the planet you're thinking of "); cout << planets[i] << "?\n";
+						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
 						getline(cin, answer);
 						
 						if (answer=="Yes")
