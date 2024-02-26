@@ -4,12 +4,13 @@
 #include "QuestionsGame1.h"
 #include "Quiz1Functions.h"
 #include "GlobalFunctions.h"
+#include <string>
 using namespace std;
 
 void playGame1() {
     PrintGame1Header();
     int score = makeQuiz();
-    cout << "You scored " << score << " out of " << NUM_QUESTIONS << "." << endl;
+    centerText("You scored " + to_string(score) + " out of " + to_string(NUM_QUESTIONS) + ".\n");
     cin.get();
     ShowMenu();
 }
