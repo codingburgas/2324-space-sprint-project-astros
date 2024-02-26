@@ -48,9 +48,6 @@
     <ClCompile Include="Game4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game 5.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -84,9 +81,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WordsGame4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game5.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

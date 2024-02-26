@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Astros.cpp" />
-    <ClCompile Include="Game 5.cpp" />
     <ClCompile Include="Game2Functions.cpp" />
     <ClCompile Include="Game4.cpp" />
     <ClCompile Include="GlobalFunctions.cpp" />
@@ -143,7 +142,6 @@
   <ItemGroup>
     <ClInclude Include="Game1.h" />
     <ClInclude Include="Game4.h" />
-    <ClInclude Include="Game5.h" />
     <ClInclude Include="GlobalFunctions.h" />
     <ClInclude Include="QuestionsGame1.h" />
     <ClInclude Include="Game2.h" />
