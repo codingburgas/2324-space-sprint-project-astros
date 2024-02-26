@@ -1,4 +1,5 @@
 #include "Game4.h"
+#include "Menu.h"
 #include "WordsGame4.h"
 #include "GlobalFunctions.h"
 #include <iostream>
@@ -42,7 +43,7 @@ string toLowerCase(const string& input) {
 
 void PrintGame4Rules()
 {
-    cout << "Towa sa pravilata na igrata..." << endl;
+    centerText("Here, the programme prints out a word whose letters are reordered in a way that makes it lose its meaning.Your task is to write the word the way it's originally meant to be written.\n\n");
 }
 
 void PrintGame4Header()
@@ -96,9 +97,10 @@ void playGame4()
             cout << SPACE_WORDS[i] << endl;
         }
     }
-
     // Output the player's score
     //cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;//
     centerText("Your score: ");
     cout << score << "/" << SPACE_WORDS_COUNT << endl;
+    cin.get();
+    ShowMenu();
 }

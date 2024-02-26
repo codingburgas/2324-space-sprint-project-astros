@@ -5,5 +5,10 @@ const char* SPACE_WORDS[] = {
 	"Comet", 
 	"Orbit", 
 	"Moon", 
-	"Galaxy" };
-const int SPACE_WORDS_COUNT = 5; // The number of words in the SPACE_WORDS array
+	"Galaxy",
+    "Asteroid",
+    "Astronomy",
+    "Ellipse",
+    "Gravity",
+    "Meteoroid"};
+const int SPACE_WORDS_COUNT = 10; // The number of words in the SPACE_WORDS array

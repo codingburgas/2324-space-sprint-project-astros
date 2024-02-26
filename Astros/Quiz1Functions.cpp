@@ -23,7 +23,7 @@ void PrintGame1Header()
 
 void PrintGame1Rules()
 {
-    centerText("Tova sa pravilata na igrata: \n");
+    centerText("Choose the answer you think is correct for each question. You are entitled to 3 jokers - 50:50. If you need them, enter ? \n");
 }
 
 int fiftyFifty(int rightAnswer) {
