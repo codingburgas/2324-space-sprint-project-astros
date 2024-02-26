@@ -9,13 +9,13 @@
 #include "Game3.h"
 #include "Game4.h"
 using namespace std;
-bool firsttimerun = true;
+bool firsttimerun = true; // Global variable for FullScreen.
 void ShowMenu()
 {
-	if (firsttimerun) FullScreen();
+	if (firsttimerun) FullScreen(); // Add Fullscreen
 	firsttimerun = false;
-	clear();
-	PrintLogo();
+	clear(); // Clear Screen
+	PrintLogo(); // Print Logo
 
 	string MenuOptions[5] = {
 		"           Astronomy Quiz           ",
@@ -23,14 +23,14 @@ void ShowMenu()
 		"           Cosmic Trivia            ",
 		"           Guess The Word           ",
 		"                Exit                "
-	};
+	}; // The Mini Games
 
 	bool timetochoose = true;
 	int SelectedGame = 0;
 	while (timetochoose) {		
-		clear();
-		PrintLogo();
-		for (int i = 0; i < 5; i++) {
+		clear(); // Clear Screen
+		PrintLogo(); // Print Logo
+		for (int i = 0; i < 5; i++) { // Updates the menu in real time.
 			if (i == SelectedGame) {
 				ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 11);
 				PrintMenuOption(MenuOptions[i]);
@@ -39,9 +39,9 @@ void ShowMenu()
 			else {
 				PrintMenuOption(MenuOptions[i]);
 			}
-		}
+		} 
 
-		char key = _getch();
+		char key = _getch(); // Select Games
 		if (key == 72) {
 			if (SelectedGame - 1 < 0) SelectedGame = 4;
 			else SelectedGame -= 1;
@@ -51,28 +51,28 @@ void ShowMenu()
 			else SelectedGame += 1;
 		}
 		else if (key == 13) {
-			if (SelectedGame == 0) {
+			if (SelectedGame == 0) { // Play Game 1
 				playGame1();
 				timetochoose = false;
 			}
-			else if (SelectedGame == 1) {
+			else if (SelectedGame == 1) { // Play Game 2
 				playGame2();
 				timetochoose = false;
 			}
-			else if (SelectedGame == 2) {
+			else if (SelectedGame == 2) { // Play Game 3
 				playGame3();
 				timetochoose = false;
 			}
-			else if (SelectedGame == 3) {
+			else if (SelectedGame == 3) { // Play Game 4
 				playGame4();
 				timetochoose = false;
 			}
 			else if (SelectedGame == 4) timetochoose = false;
-		}
+		} 
 	} 
 }
 
-void PrintMenuOption(string Option) {
+void PrintMenuOption(string Option) { // This function print out the menu options separately
 	int Padding = (getConsoleWidth() - 38) / 2;
 	cout << string(Padding, ' ') << char(201);
 	for (int i = 0; i < 36; i++) {

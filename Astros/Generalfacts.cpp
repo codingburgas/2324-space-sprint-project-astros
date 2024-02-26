@@ -36,10 +36,10 @@ int AnswerCheck(string compareto, string thiss) {
 
 // This function "corrects" the answer given to it by giving it a value that the "AnswerInit()" function can read (Lines 92 and 94-106) // 
 void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 112-115) //
-	const int standard = 48; // The number of possible answers is set to a constant standard as it is a subject to change //
+	const int standard = 47; // The number of possible answers is set to a constant standard as it is a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Earth/Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None", "Help"};
+	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None", "Help"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -65,13 +65,13 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 	}
 	
 	// This loop eliminates the function of the loop on Lines 88 - 98 beacause if the given answer is moon related, it might cause some coincidences that may end up eliminating the functionality of the function //
-	if (SaveIndex >= 4 and SaveIndex <= 5 or SaveIndex >= 7 and SaveIndex <= 9 or SaveIndex >= 12 and SaveIndex <= 16 or SaveIndex >= 18 and SaveIndex <= 24 or SaveIndex >= 26 and SaveIndex <= 31 or SaveIndex >= 33 and SaveIndex <= 36 or SaveIndex >= 38 and SaveIndex <= 43) {
+	if (SaveIndex == 4 or SaveIndex >= 7 and SaveIndex <= 9 or SaveIndex >= 12 and SaveIndex <= 16 or SaveIndex >= 18 and SaveIndex <= 24 or SaveIndex >= 26 and SaveIndex <= 31 or SaveIndex >= 33 and SaveIndex <= 36 or SaveIndex >= 38 and SaveIndex <= 43) {
 		for (int i = 0; i < standard; i++) {
 			PosCon[i] = 0;
 		}
 	}
 
-	if (SaveIndex >= 4 and SaveIndex <= 5) SaveIndex = 3;
+	if (SaveIndex == 4) SaveIndex = 3;
 	else if (SaveIndex >= 7 and SaveIndex <= 9) SaveIndex = 6;
 	else if (SaveIndex >= 12 and SaveIndex <= 16) SaveIndex = 11;
 	else if (SaveIndex >= 18 and SaveIndex <= 24) SaveIndex = 17;
