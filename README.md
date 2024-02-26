@@ -6,13 +6,7 @@
 
 <br>
 
-<p align = "center">
-    <img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/HPRusev22/2324-space-sprint-project-astros?style=flat-square">
-    <img alt="GitHub contributors" src="https://img.shields.io/github/contributors/HPRusev22/2324-space-sprint-project-astros?style=flat-square">
-    <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/HPRusev22/2324-space-sprint-project-astros?style=flat-square">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/HPRusev22/2324-space-sprint-project-astros?style=flat-square">
-    <img src="https://img.shields.io/github/languages/count/HPRusev22/2324-space-sprint-project-astros?style=flat-square">
-</p>
+
 
 ## 📋 Description
   Offering a variety of mini-games and interactive planetary lore, take this new command blocking system developed by highly skilled engineers on a whirlwind adventure through the universe in. 
