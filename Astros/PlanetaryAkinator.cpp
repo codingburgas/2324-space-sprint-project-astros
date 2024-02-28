@@ -42,7 +42,7 @@ void playPlanetaryAkinator()
 
 
 			//Round 1
-			if (rng1 == 0) { //checks which question the rng function chose
+			if (rng1 == 0) { //variation 1 of the first question
 				if (answer == "Yes") {
 					int Mercury = 0, Venus = 0, Earth = 0, Mars = 0;
 					questionTwoInnerOuterPlanets(Earth, Mars, Mercury, Venus); //asks the second question. this eliminates 2 out of the 4 remaining planets (arguments)
@@ -50,56 +50,56 @@ void playPlanetaryAkinator()
 					clear();
 					PrintLogo();
 
-					int arr[4] = { Earth,Mars,Mercury, Venus }; //connects each planet to its respective index in the questions above (for example: earth is 2, mars is 3...)
-					int index[4] = { 2,3,0,1 };
+					int arr[4] = { Earth,Mars,Mercury, Venus }; //the remaining planets based on the user's answer
+					int index[4] = { 2,3,0,1 }; //and their corresponding indexes in the planets[] array
 
 
-					finalQuestions(answer, index, arr);
+					finalQuestions(answer, index, arr); //asks the final questions which are gonna determine which of the 4 remaining planets is the one the user is thinking about
 				}
 
 				else {
 					int	Jupiter = 0, Saturn = 0, Uranus = 0, Neptune = 0;
-					questionTwoInnerOuterPlanets(Uranus, Neptune, Jupiter, Saturn);
+					questionTwoInnerOuterPlanets(Uranus, Neptune, Jupiter, Saturn); 
 					cout << endl;
 					clear();
 					PrintLogo();
 
-					int arr[4] = { Uranus,Neptune,Jupiter,Saturn };
-					int index[4] = { 6,7,4,5 };
+					int arr[4] = { Uranus,Neptune,Jupiter,Saturn }; //the remaining planets based on the user's answer
+					int index[4] = { 6,7,4,5 }; //and their corresponding indexes in the planets[] array
 
 
-					finalQuestions(answer, index, arr);
+					finalQuestions(answer, index, arr); //asks the final questions which are gonna determine which of the 4 remaining planets is the one the user is thinking about
 				}
 			}
 
-			else {
+			else { //variation 2 of the first question
 				if (answer == "Yes") {
 					int Venus = 0, Earth = 0, Mars = 0, Jupiter = 0;
-					questionTwoSustainWeatherSystem(Earth, Jupiter, Venus, Mars);
+					questionTwoSustainWeatherSystem(Earth, Jupiter, Venus, Mars); //asks the second question. this eliminates 2 out of the 4 remaining planets (arguments)
 					cout << endl;
 					clear();
 					PrintLogo();
 
-					int arr[4] = { Earth,Jupiter,Venus,Mars };
-					int index[4] = { 2,4,1,3 };
+					int arr[4] = { Earth,Jupiter,Venus,Mars }; //the remaining planets based on the user's answer
+					int index[4] = { 2,4,1,3 }; //and their corresponding indexes in the planets[] array
 
 
-					finalQuestions(answer, index, arr);
+					finalQuestions(answer, index, arr); //asks the final questions which are gonna determine which of the 4 remaining planets is the one the user is thinking about
 				}
 
 
 				else {
 					int Mercury = 0, Saturn = 0, Uranus = 0, Neptune = 0;
-					questionTwoSustainWeatherSystem(Mercury, Saturn, Uranus, Neptune);
+					questionTwoSustainWeatherSystem(Mercury, Saturn, Uranus, Neptune); //asks the second question. this eliminates 2 out of the 4 remaining planets (arguments)
 					cout << endl;
 					clear();
 					PrintLogo();
 
-					int arr[4] = { Mercury,Saturn,Uranus,Neptune };
-					int index[4] = { 0,5,6,7 };
+					int arr[4] = { Mercury,Saturn,Uranus,Neptune }; //the remaining planets based on the user's answer
+					int index[4] = { 0,5,6,7 }; //and their corresponding indexes in the planets[] array
 
 
-					finalQuestions(answer, index, arr);
+					finalQuestions(answer, index, arr); //asks the final questions which are gonna determine which of the 4 remaining planets is the one the user is thinking about
 				}
 			}
 }

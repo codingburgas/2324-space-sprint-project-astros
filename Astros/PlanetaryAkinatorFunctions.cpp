@@ -6,6 +6,8 @@
 #include <cstdlib>
 #include "GlobalFunctions.h"
 #include "Menu.h"
+#include <limits>
+#undef max
 using namespace std;
 int rng;
 string secondRoundSustainWeatherSystem[2] = { "Does your planet have a global magnetic field?", "Does the planet have an extremely high atmospheric pressure at its surface or lack a solid surface?" }, secondRoundInnerOuterPlanets[2] = { "Does your planet have days, similar/identical to Earth's by lenght?","Has your planet been visited by a spacecraft for a flyby, orbit, or landing?" }, planets[8] = { "Mercury", "Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune" },
@@ -25,16 +27,16 @@ int randomNumberGenerator(int from, int to) { //function picks out a number betw
     return distr(eng);
 }
 
-void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) { //2nd question
-    rng = randomNumberGenerator(0, 1);
-    centerText(secondRoundSustainWeatherSystem[rng]);
-    string answer;
-    cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
+void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) { //first variation of question 2
+    rng = randomNumberGenerator(0, 1); //picks out a random number between 0 and 1. this is essential for randomizing the questions.
+    centerText(secondRoundSustainWeatherSystem[rng]); //picks out a random question based on the number picked
+    string answer; //declares the variable which is gonna hold the value of the user's input
+    cout << endl << string((getConsoleWidth() / 2) - 5, ' '); //makes the user input appear in the middle of the screen
     getline(cin, answer);
     clear();
     PrintLogo();
-    inputCheckRegular(answer,secondRoundSustainWeatherSystem[rng]);
-    switch (rng) {
+    inputCheckRegular(answer,secondRoundSustainWeatherSystem[rng]); //checks if the user is in need of help, wants to leave the game, or has made a typo
+    switch (rng) { //adds values to the planets based on the random question picked and the answer given
     case 0:
         if (answer == "Yes") {
             a++;
@@ -58,18 +60,18 @@ void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) { //2nd que
     }
 }
 
-void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) {
-    rng = randomNumberGenerator(0, 1);
-    centerText(secondRoundInnerOuterPlanets[rng]);
-    cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
-    string answer;
+void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) { //second variation of question 2
+    rng = randomNumberGenerator(0, 1); //picks out a random number between 0 and 1. this is essential for randomizing the questions.
+    centerText(secondRoundInnerOuterPlanets[rng]); //picks out a random question based on the number picked
+    cout << endl << string((getConsoleWidth() / 2) - 5, ' '); //makes the user input appear in the middle of the screen
+    string answer; //declares the variable which is gonna hold the value of the user's input
     getline(cin, answer);
     clear();
     PrintLogo();
-    inputCheckRegular(answer, secondRoundInnerOuterPlanets[rng]);
-    switch (rng) {
+    inputCheckRegular(answer, secondRoundInnerOuterPlanets[rng]); //checks if the user is in need of help, wants to leave the game, or has made a typo
+    switch (rng) { //adds values to the planets based on the random question picked and the answer given
     case 0:
-        if (answer == "Yes") {
+        if (answer == "Yes") { 
             a++;
             b++;
         }
@@ -93,52 +95,96 @@ void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) {
 
 void inputCheckRegular(string& input, string text) {
     
-    if (input == "leave" or input == "Leave") leaveGame();
-    while (input != "Yes" and input != "No") {
-        centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
-        centerText(text + "\n");
-        cout << string((getConsoleWidth() / 2) - 5, ' ');
-        getline(cin, input);
-        if (input == "leave" || input == "Leave") leaveGame();
+    if (input == "leave" or input == "Leave") leaveGame(); //the input gets entered by the user before this function is called and this checked if that's the user asking to exit the game
+    while (input != "Yes" and input != "No" ) { //if the text is anything else than yes and no:
+        if (input == "help" or input == "Help") { //this checks if the user is asking for help or actually made a typo writing out yes or no
+            clear(); //screen gets cleared from any previous visual clutter
+            PrintLogo(); //logo gets printed
+            Help("PlanetaryAkinator"); //help function gets called
+            centerText(text + "\n"); //prints out the question
+            cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
+            getline(cin, input); //the user can either type yes or no and proceed to the next question or ask for help again and have the menu show up a 2nd time (or 3rd and so on)
+        }
+        else { //if the user made a typo they gets notified and are given the chance to re-enter whatever they wanted to type
+            centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+            centerText(text + "\n");
+            cout << string((getConsoleWidth() / 2) - 5, ' ');
+            getline(cin, input);
+        }
+        if (input == "leave" || input == "Leave") leaveGame(); //checks if the user wants to leave the game AFTER the help function is called/a typo is made
+        
         clear();
         PrintLogo();
     }
 }
 
 void inputCheckQuestions(string& input, string questions[], int rng1){
-    if (input == "leave" or input=="Leave") leaveGame();
-    while (input != "Yes" and input != "No"){
-        centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
-        centerText(questions[rng1]);
-        cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
-        getline(cin, input);
-        if (input == "leave" || input == "Leave") leaveGame();
+    if (input == "leave" or input == "Leave") leaveGame(); //the input gets entered by the user before this function is called and this checked if that's the user asking to exit the game
+    while (input != "Yes" and input != "No") { //if the text is anything else than yes and no:
+        if (input == "help" or input == "Help") { //this checks if the user is asking for help or actually made a typo writing out yes or no
+            clear(); //screen gets cleared from any previous visual clutter
+            PrintLogo(); //logo gets printed
+            Help("PlanetaryAkinator"); //help function gets called
+            centerText(questions[rng1] + "\n"); //prints out the question
+            cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
+            getline(cin, input); //the user can either type yes or no and proceed to the next question or ask for help again and have the menu show up a 2nd time (or 3rd and so on)
+        }
+        else { //if the user made a typo they gets notified and are given the chance to re-enter whatever they wanted to type
+            centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+            centerText(questions[rng1] + "\n");
+            cout << string((getConsoleWidth() / 2) - 5, ' ');
+            getline(cin, input);
+        }
+        if (input == "leave" || input == "Leave") leaveGame(); //checks if the user wants to leave the game AFTER the help function is called/a typo is made
+
         clear();
         PrintLogo();
     }
 }
 
 void inputCheckFinalQuestions(string& input, int rng1, int index[], int i) {
-    if (input == "leave" || input == "Leave") leaveGame();
-    while (input != "Yes" && input != "No") {
-        centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
-        centerText(planetSpecificFacts[index[i]][rng1]);
-        cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
-        getline(cin, input);
-        if (input == "leave" || input == "Leave") leaveGame();
+    if (input == "leave" or input == "Leave") leaveGame(); //the input gets entered by the user before this function is called and this checked if that's the user asking to exit the game
+    while (input != "Yes" and input != "No") { //if the text is anything else than yes and no:
+        if (input == "help" or input == "Help") { //this checks if the user is asking for help or actually made a typo writing out yes or no
+            clear(); //screen gets cleared from any previous visual clutter
+            PrintLogo(); //logo gets printed
+            Help("PlanetaryAkinator"); //help function gets called
+            centerText(planetSpecificFacts[index[i]][rng1] + "\n"); //prints out the question
+            cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
+            getline(cin, input); //the user can either type yes or no and proceed to the next question or ask for help again and have the menu show up a 2nd time (or 3rd and so on)
+        }
+        else { //if the user made a typo they gets notified and are given the chance to re-enter whatever they wanted to type
+            centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+            centerText(planetSpecificFacts[index[i]][rng1] + "\n");
+            cout << string((getConsoleWidth() / 2) - 5, ' ');
+            getline(cin, input);
+        }
+        if (input == "leave" || input == "Leave") leaveGame(); //checks if the user wants to leave the game AFTER the help function is called/a typo is made
+
         clear();
         PrintLogo();
     }
 }
 
 void inputCheckFinalGuess(string& input, string planets[], int index[], int i) {
-    if (input == "leave" or input=="Leave") leaveGame();
-        while(input!="Yes" && input!="No"){
-        centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
-        centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
-        cout << string((getConsoleWidth() / 2) - 5, ' ');
-        getline(cin, input);
-        if (input == "leave" || input == "Leave") leaveGame();
+    if (input == "leave" or input == "Leave") leaveGame(); //the input gets entered by the user before this function is called and this checked if that's the user asking to exit the game
+    while (input != "Yes" and input != "No") { //if the text is anything else than yes and no:
+        if (input == "help" or input == "Help") { //this checks if the user is asking for help or actually made a typo writing out yes or no
+            clear(); //screen gets cleared from any previous visual clutter
+            PrintLogo(); //logo gets printed
+            Help("PlanetaryAkinator"); //help function gets called
+            centerText("Is the planet you're thinking of " + planets[index[i]] + "?" + "\n"); //prints out the question
+            cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
+            getline(cin, input); //the user can either type yes or no and proceed to the next question or ask for help again and have the menu show up a 2nd time (or 3rd and so on)
+        }
+        else { //if the user made a typo they gets notified and are given the chance to re-enter whatever they wanted to type
+            centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
+            centerText("Is the planet you're thinking of " + planets[index[i]] + "?" + "\n");
+            cout << string((getConsoleWidth() / 2) - 5, ' ');
+            getline(cin, input);
+        }
+        if (input == "leave" || input == "Leave") leaveGame(); //checks if the user wants to leave the game AFTER the help function is called/a typo is made
+
         clear();
         PrintLogo();
     }
@@ -163,12 +209,12 @@ void finalQuestions(string& answer, int index[], int arr[]) {
                 inputCheckFinalGuess(answer, planets, index, i);
                 if (answer == "Yes")
                 {
-                    playAgain("Haha! I knew it! Do you dare challenge me again?");
+                    playAgain("Haha! I knew it! Do you dare challenge me again?"); //function which asks the player if they want to play again
 
                 }
 
                 else {
-                    playAgain("Ugh! I've been defeated! Would you like to give me another chance?");
+                    playAgain("Ugh! I've been defeated! Would you like to give me another chance?"); //function which asks the player if they want to play again
                 }
 
 
@@ -181,18 +227,18 @@ void playAgain(string text) {
     string answer;
     clear();
     PrintLogo();
-    centerText(text + "\n");
-    cout << string((getConsoleWidth() / 2) - 5, ' ');
+    centerText(text + "\n"); //prints out the text entered in the function
+    cout << string((getConsoleWidth() / 2) - 5, ' '); //displays user input in the middle of the screen
     getline(cin, answer);
     clear();
     PrintLogo();
-    inputCheckRegular(answer, text);
-    if (answer == "Yes") {
+    inputCheckRegular(answer, text); //checks if the user is in need of help, wants to exit the game, or has made a typo
+    if (answer == "Yes") { //if the user wants to play again:
         playPlanetaryAkinator();
     }
-    if (answer == "No") {
+    if (answer == "No") { //if the user doesn't want to play again:
         clear();
-        leaveGame();
+        leaveGame(); //function which sends you back to the main menu and stops the game
     }
 }
 

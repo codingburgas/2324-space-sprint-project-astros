@@ -3,8 +3,8 @@
 #include "GlobalFunctions.h"
 #include <iostream>
 #include <string>
-#include <cstdlib>  
-#include <ctime>  
+#include <cstdlib>  //includes functions involving memory allocation, process control, conversions and others
+#include <ctime>  //Convert Time to Character String
 #include <conio.h> //it includes inbuilt functions like getch() and clrscr()
 #include <Windows.h>
 
@@ -75,17 +75,18 @@ int makeQuiz()
             PrintLogo();
             centerText("Question " + to_string(i + 1) + ": " + questions[i] + "\n\n");
             for (int j = 0; j < 5; j++) {
-                if (j == 4) {
+                if (j == 4) { //4 is for jokers
                     if (SelectedOption == j) {
-                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
-                        if (jokersUsed < 3) {
+                        if (jokersUsed < 3) { //the limit is 3
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
                             centerText("Use a Hint " + to_string(jokersUsed) + "/3" "\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
                         else {
-
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 13);
                             centerText("No more Hints!\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
-                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                     }
                     else {
                         if (jokersUsed < 3) {
@@ -133,7 +134,7 @@ int makeQuiz()
                 if (SelectedOption + 1 > 5) SelectedOption = 0;
                 else SelectedOption += 1;
             }
-            else if (key == 88 or key == 120) {
+            else if (key == 88 or key == 120) { // x and X for returning to the Main menu
                 return 0;
             }
             else if (key == 13) { //enter
