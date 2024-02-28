@@ -4,7 +4,7 @@
 #include "GlobalFunctions.h"
 #include <iostream>
 #include <Windows.h>
-#include <conio.h>
+#include <conio.h> //it includes inbuilt functions like getch() and clrscr()
 #include <string>
 #include <cstdlib> // For rand() and srand()
 #include <ctime>   // For time()
