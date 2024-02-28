@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string>
 #include <windows.h>	
+#include "Menu.h"
 using namespace std;
 void PrintLogo() { //logo
     cout << "\n\n\n";
@@ -57,6 +58,11 @@ void centerText(string text) {
     if (paddingLeft < 0) paddingLeft = 0;
 
     cout << string(paddingLeft, ' ') << text;
+}
+
+void leaveGame(){
+    ShowMenu();
+    exit(0);
 }
 
 void Help(string GameName) {

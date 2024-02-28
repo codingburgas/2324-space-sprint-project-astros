@@ -21,3 +21,4 @@ void inputCheckFinalGuess(string& input, string planets[], int index[], int i);
 void playAgain(string text);
 
 void finalQuestions(string& answer, int index[], int arr[]);
+

@@ -16,3 +16,5 @@ void centerText(std::string text);
 void Help(std::string GameName);
 
 void ChangeColor(HANDLE Output, int Color);
+
+void leaveGame();

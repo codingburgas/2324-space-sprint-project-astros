@@ -3,6 +3,7 @@
 #include <string>
 #include "PlanetaryAkinator.h"
 #include <random>
+#include <cstdlib>
 #include "GlobalFunctions.h"
 #include "Menu.h"
 using namespace std;
@@ -30,6 +31,8 @@ void questionTwoSustainWeatherSystem(int& a, int& b, int& c, int& d) { //2nd que
     string answer;
     cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
     getline(cin, answer);
+    clear();
+    PrintLogo();
     inputCheckRegular(answer,secondRoundSustainWeatherSystem[rng]);
     switch (rng) {
     case 0:
@@ -61,6 +64,8 @@ void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) {
     cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
     string answer;
     getline(cin, answer);
+    clear();
+    PrintLogo();
     inputCheckRegular(answer, secondRoundInnerOuterPlanets[rng]);
     switch (rng) {
     case 0:
@@ -87,44 +92,53 @@ void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) {
 }
 
 void inputCheckRegular(string& input, string text) {
-    while (input != "Yes" and input != "No" && input != "Exit" && input != "exit" && input != "x") {
+    
+    if (input == "leave" or input == "Leave") leaveGame();
+    while (input != "Yes" and input != "No") {
         centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
         centerText(text + "\n");
         cout << string((getConsoleWidth() / 2) - 5, ' ');
         getline(cin, input);
+        if (input == "leave" || input == "Leave") leaveGame();
         clear();
         PrintLogo();
     }
 }
 
-void inputCheckQuestions(string& input, string questions[], int rng1) {
-    while (input != "Yes" and input != "No" && input != "Exit" && input != "exit" && input != "x") {
+void inputCheckQuestions(string& input, string questions[], int rng1){
+    if (input == "leave" or input=="Leave") leaveGame();
+    while (input != "Yes" and input != "No"){
         centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
         centerText(questions[rng1]);
         cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
         getline(cin, input);
+        if (input == "leave" || input == "Leave") leaveGame();
         clear();
         PrintLogo();
     }
 }
 
 void inputCheckFinalQuestions(string& input, int rng1, int index[], int i) {
-    while (input != "Yes" && input != "No" && input != "Exit" && input != "exit" && input != "x") {
+    if (input == "leave" || input == "Leave") leaveGame();
+    while (input != "Yes" && input != "No") {
         centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
         centerText(planetSpecificFacts[index[i]][rng1]);
         cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
         getline(cin, input);
+        if (input == "leave" || input == "Leave") leaveGame();
         clear();
         PrintLogo();
     }
 }
 
 void inputCheckFinalGuess(string& input, string planets[], int index[], int i) {
-    while(input!="Yes" && input!="No" && input != "Exit" && input != "exit" && input != "x"){
+    if (input == "leave" or input=="Leave") leaveGame();
+        while(input!="Yes" && input!="No"){
         centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
         centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
         cout << string((getConsoleWidth() / 2) - 5, ' ');
         getline(cin, input);
+        if (input == "leave" || input == "Leave") leaveGame();
         clear();
         PrintLogo();
     }
@@ -139,7 +153,6 @@ void finalQuestions(string& answer, int index[], int arr[]) {
             getline(cin, answer);
             clear();
             PrintLogo();
-
             inputCheckFinalQuestions(answer, rng, index, i);
             if (answer == "Yes") {
                 centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n"; //if the user answers "Yes" in any of the facts, applying to a specific planet, the program eliminates the rest of the planets and asks the user if the planet with index i is the one they're thinking about
@@ -151,15 +164,11 @@ void finalQuestions(string& answer, int index[], int arr[]) {
                 if (answer == "Yes")
                 {
                     playAgain("Haha! I knew it! Do you dare challenge me again?");
-                    ShowMenu();
-                    break;
 
                 }
 
                 else {
                     playAgain("Ugh! I've been defeated! Would you like to give me another chance?");
-                    ShowMenu();
-                    break;
                 }
 
 
@@ -175,12 +184,15 @@ void playAgain(string text) {
     centerText(text + "\n");
     cout << string((getConsoleWidth() / 2) - 5, ' ');
     getline(cin, answer);
+    clear();
+    PrintLogo();
     inputCheckRegular(answer, text);
     if (answer == "Yes") {
         playPlanetaryAkinator();
     }
     if (answer == "No") {
         clear();
-        ShowMenu();
+        leaveGame();
     }
 }
+
