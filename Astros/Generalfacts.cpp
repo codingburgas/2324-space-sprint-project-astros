@@ -16,7 +16,6 @@ void PrintIntro() {
 	PrintLogo();
 	centerText("Welcome to the Astros cosmic trivia machine!\n");
 	centerText("Here, you will be greeted with facts about the celestial bodies of our solar system.\n\n");
-	centerText("Are you ready to learn?\n");
 }
 
 // This function right here is responsible for marking out similarities (also called coincidences) between the given answer (Line 90) and all possible answers (line 43) //
@@ -65,19 +64,19 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 	}
 	
 	// This loop eliminates the function of the loop on Lines 88 - 98 beacause if the given answer is moon related, it might cause some coincidences that may end up eliminating the functionality of the function //
-	if (SaveIndex == 4 or SaveIndex >= 7 and SaveIndex <= 9 or SaveIndex >= 12 and SaveIndex <= 16 or SaveIndex >= 18 and SaveIndex <= 24 or SaveIndex >= 26 and SaveIndex <= 31 or SaveIndex >= 33 and SaveIndex <= 36 or SaveIndex >= 38 and SaveIndex <= 43) {
+	if (SaveIndex == 4 or SaveIndex >= 6 and SaveIndex <= 8 or SaveIndex >= 11 and SaveIndex <= 15 or SaveIndex >= 17 and SaveIndex <= 23 or SaveIndex >= 25 and SaveIndex <= 30 or SaveIndex >= 32 and SaveIndex <= 35 or SaveIndex >= 37 and SaveIndex <= 42) {
 		for (int i = 0; i < standard; i++) {
 			PosCon[i] = 0;
 		}
 	}
 
 	if (SaveIndex == 4) SaveIndex = 3;
-	else if (SaveIndex >= 7 and SaveIndex <= 9) SaveIndex = 6;
-	else if (SaveIndex >= 12 and SaveIndex <= 16) SaveIndex = 11;
-	else if (SaveIndex >= 18 and SaveIndex <= 24) SaveIndex = 17;
-	else if (SaveIndex >= 26 and SaveIndex <= 31) SaveIndex = 25;
-	else if (SaveIndex >= 33 and SaveIndex <= 36) SaveIndex = 32;
-	else if (SaveIndex >= 38 and SaveIndex <= 43) SaveIndex = 37;
+	else if (SaveIndex >= 6 and SaveIndex <= 8) SaveIndex = 5;
+	else if (SaveIndex >= 11 and SaveIndex <= 15) SaveIndex = 10;
+	else if (SaveIndex >= 17 and SaveIndex <= 23) SaveIndex = 16;
+	else if (SaveIndex >= 25 and SaveIndex <= 30) SaveIndex = 24;
+	else if (SaveIndex >= 32 and SaveIndex <= 35) SaveIndex = 31;
+	else if (SaveIndex >= 37 and SaveIndex <= 42) SaveIndex = 36;
 	else moon = false;
 
 	if (moon) {
@@ -88,7 +87,7 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 	// This loop comes in handy in case there is another possible answer with just as many coincidences as the highest number of coincidences //
 	for (int i = 0; i < standard; i++) {
 		if (PosCon[i] == max and i != SaveIndex) {
-			// The SaveResult function doing its job //
+			// The SaveResult function doing its job // 
 			SaveResult = answ;
 			moon = false;
 			break;
@@ -107,11 +106,13 @@ void AnswerInit() {
 
 	bool confirmation = true;
 	while (confirmation) {
+		cout << endl;
 		centerText("Which celestial body would you like to hear about?\n\n");
 
 		string answer;
 		bool mooncheck = true;
 
+		cout << endl;
 		cout << string((getConsoleWidth() / 2) - 5, ' ');
 		getline(cin, answer, '\n');
 		cout << endl;
@@ -132,7 +133,7 @@ void AnswerInit() {
 			else if (answer == "Neptune") NepFact();
 			else if (answer == "Pluto") PluFact();
 			else if (answer == "Kuiper Belt") KuiperBeltFact();
-			else if (answer == "Help") Help("Game3");
+			else if (answer == "Help") Help("CosmicTrivia");
 			else if (answer == "Exit") confirmation = false; // ... the programme will either stop, //
 			else if (answer == "None") ShowMenu(); // redirect the user to the Main Menu //
 			else centerText(answer + "? Could you give us a coherent answer? \n"); // or ask them to give a coherent answer. //
@@ -142,13 +143,18 @@ void AnswerInit() {
 
 // This function basically "decides" whether or not you proceed wtih Game 3. If you choose 'No', it redirects you back to the starting menu... //
 void YourDecision() {
+	centerText("Are you ready to learn?\n");
 	string decision;
 	
 	cout << string((getConsoleWidth() / 2) - 5, ' ');
 	getline(cin, decision, '\n');
 	if (decision == "Yes" or decision == "yes") AnswerInit(); // ... if you choose 'Yes' however, your will be redirected to the answer-distributing funcion "AnswerInit()" //
-	else if (decision == "No" or decision == "no") ShowMenu();
-	else if (decision == "Help") Help("Game3Decision");
+	else 
+		if (decision == "No" or decision == "no")
+		{
+			
+		}
+	else if (decision == "Help") Help("CosmicTriviaDecision");
 	else {
 		//cout << decision << "? Could you please give us a valid answer?" << endl;//
 		centerText(decision + "? Could you give us a valid answer? \n");

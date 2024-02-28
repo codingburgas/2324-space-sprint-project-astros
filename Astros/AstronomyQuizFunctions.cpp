@@ -1,8 +1,5 @@
-#include "Quiz1Functions.h"
-#include "QuestionsGame1.h"
-#include "GlobalFunctions.h"
-#include "Quiz1Functions.h"
-#include "QuestionsGame1.h"
+#include "QuestionsAstronomyQuiz.h"
+#include "AstronomyQuizFunctions.h"
 #include "GlobalFunctions.h"
 #include <iostream>
 #include <string>

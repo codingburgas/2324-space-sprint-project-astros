@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>	
 #include <string>
-#include "Game2.h"
+#include "PlanetaryAkinator.h"
 #include <random>
 #include "GlobalFunctions.h"
 using namespace std;

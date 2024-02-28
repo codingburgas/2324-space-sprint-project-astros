@@ -128,29 +128,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Astros.cpp" />
-    <ClCompile Include="Game2Functions.cpp" />
-    <ClCompile Include="Game4.cpp" />
+    <ClCompile Include="PlanetaryAkinatorFunctions.cpp" />
+    <ClCompile Include="GuessTheWord.cpp" />
     <ClCompile Include="GlobalFunctions.cpp" />
     <ClCompile Include="Menu.cpp" />
-    <ClCompile Include="Game1.cpp" />
-    <ClCompile Include="Game2.cpp" />
+    <ClCompile Include="AstronomyQuiz.cpp" />
+    <ClCompile Include="PlanetaryAkinator.cpp" />
     <ClCompile Include="Generalfacts.cpp" />
     <ClCompile Include="FactSheet.cpp" />
-    <ClCompile Include="Game3.cpp" />
-    <ClCompile Include="Quiz1Functions.cpp" />
+    <ClCompile Include="CosmicTrivia.cpp" />
+    <ClCompile Include="AstronomyQuizFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game1.h" />
-    <ClInclude Include="Game4.h" />
+    <ClInclude Include="AstronomyQuiz.h" />
+    <ClInclude Include="GuessTheWord.h" />
     <ClInclude Include="GlobalFunctions.h" />
-    <ClInclude Include="QuestionsGame1.h" />
-    <ClInclude Include="Game2.h" />
+    <ClInclude Include="QuestionsAstronomyQuiz.h" />
+    <ClInclude Include="PlanetaryAkinator.h" />
     <ClInclude Include="Generalfacts.h" />
     <ClInclude Include="FactSheet.h" />
-    <ClInclude Include="Game3.h" />
+    <ClInclude Include="CosmicTrivia.h" />
     <ClInclude Include="Menu.h" />
-    <ClInclude Include="Quiz1Functions.h" />
-    <ClInclude Include="WordsGame4.h" />
+    <ClInclude Include="AstronomyQuizFunctions.h" />
+    <ClInclude Include="WordsGuessTheWord.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

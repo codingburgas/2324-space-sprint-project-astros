@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Game2.h"
+#include "PlanetaryAkinator.h"
 #include "GlobalFunctions.h"
 #include "Menu.h"
 #include <Windows.h>
@@ -8,7 +8,7 @@
 #undef max
 using namespace std;
 
-void playGame2()
+void playPlanetaryAkinator()
 {
 	clear();
 	PrintLogo();
@@ -42,7 +42,7 @@ void playGame2()
 	getline(cin, answer);
 	clear();
 	PrintLogo();
-	while (answer != "Yes" && answer != "No") { //checks if "Yes" or "No" is misspelled
+	while (answer != "Yes" and answer != "No") {
 		centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
 		centerText(starterQuestions[rng1]);
 		cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
@@ -80,12 +80,10 @@ void playGame2()
 						clear();
 						PrintLogo();
 					}
-
 					if (answer == "Yes") {
 						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n"; //if the user answers "Yes" in any of the facts, applying to a specific planet, the program eliminates the rest of the planets and asks the user if the planet with index i is the one they're thinking about
 						cout << string((getConsoleWidth() / 2) - 5, ' ');
 						getline(cin, answer);
-
 						while (answer != "Yes" and answer != "No") {
 							centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
 
@@ -109,7 +107,7 @@ void playGame2()
 								PrintLogo();
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -122,6 +120,7 @@ void playGame2()
 							clear();
 							PrintLogo();
 							centerText("Ugh! Would you like to give me another chance?\n");
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 							clear();
 							PrintLogo();
@@ -134,7 +133,7 @@ void playGame2()
 								PrintLogo();
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -207,9 +206,10 @@ void playGame2()
 								getline(cin, answer);
 								clear();
 								PrintLogo();
+
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -225,6 +225,7 @@ void playGame2()
 							clear();
 							PrintLogo();
 							centerText("Ugh! Would you like to give me another chance?\n");
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 							while (answer != "Yes" and answer != "No") {
 								centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
@@ -245,7 +246,7 @@ void playGame2()
 								PrintLogo();
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -277,7 +278,7 @@ void playGame2()
 				if (arr[i] != 0) {
 					rng1 = randomNumberGenerator(0, 1);
 					centerText(planetSpecificFacts[index[i]][rng1]);
-					cout << endl;
+					cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 					getline(cin, answer);
 					clear();
 					PrintLogo();
@@ -286,7 +287,7 @@ void playGame2()
 						rng1 = randomNumberGenerator(0, 1);
 						centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
 						centerText(planetSpecificFacts[index[i]][rng1]);
-						cout << endl;
+						cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 						getline(cin, answer);
 						clear();
 						PrintLogo();
@@ -294,6 +295,7 @@ void playGame2()
 
 					if (answer == "Yes") {
 						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
+						cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 						getline(cin, answer);
 						while (answer != "Yes" and answer != "No") {
 							centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
@@ -308,6 +310,7 @@ void playGame2()
 							clear();
 							PrintLogo();
 							centerText("Haha! I knew it! Do you dare challenge me again?\n");
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 							clear();
 							PrintLogo();
@@ -320,7 +323,7 @@ void playGame2()
 								PrintLogo();
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -334,6 +337,7 @@ void playGame2()
 							clear();
 							PrintLogo();
 							centerText("Ugh! Would you like to give me another chance?\n");
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 							clear();
 							PrintLogo();
@@ -346,7 +350,7 @@ void playGame2()
 								PrintLogo();
 							}
 							if (answer == "Yes") {
-								playGame2();
+								playPlanetaryAkinator();
 							}
 
 							if (answer == "No") {
@@ -378,7 +382,7 @@ void playGame2()
 				if (arr[i] != 0) {
 					rng1 = randomNumberGenerator(0, 1);
 					centerText(planetSpecificFacts[index[i]][rng1]);
-					cout << endl;
+					cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 					getline(cin, answer);
 					clear();
 					PrintLogo();
@@ -386,6 +390,7 @@ void playGame2()
 					while (answer != "Yes" && answer != "No") {
 						centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
 						cout << starterQuestions[rng1] << endl;
+						cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 						getline(cin, answer);
 						clear();
 						PrintLogo();
@@ -393,7 +398,7 @@ void playGame2()
 
 					if (answer == "Yes") {
 						centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
-
+						cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 						getline(cin, answer);
 
 						clear();
@@ -403,6 +408,7 @@ void playGame2()
 							centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
 							cout << starterQuestions[rng1] << endl;
 							cout << planets[index[i]] << "?\n";
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 							clear();
 							PrintLogo();
@@ -410,6 +416,7 @@ void playGame2()
 
 						if (answer == "Yes") {
 							centerText("Is the planet you're thinking of "); cout << planets[index[i]] << "?\n";
+							cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 							getline(cin, answer);
 
 							if (answer == "Yes")
@@ -417,6 +424,7 @@ void playGame2()
 								clear();
 								PrintLogo();
 								centerText("Haha! I knew it! Do you dare challenge me again?\n");
+								cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 								getline(cin, answer);
 								clear();
 								PrintLogo();
@@ -429,7 +437,7 @@ void playGame2()
 									PrintLogo();
 								}
 								if (answer == "Yes") {
-									playGame2();
+									playPlanetaryAkinator();
 								}
 
 								if (answer == "No") {
@@ -444,6 +452,7 @@ void playGame2()
 								clear();
 								PrintLogo();
 								centerText("Ugh! Would you like to give me another chance?\n");
+								cout << endl << string((getConsoleWidth() / 2) - 5, ' ');
 								getline(cin, answer);
 
 								clear();
@@ -457,7 +466,7 @@ void playGame2()
 									PrintLogo();
 								}
 								if (answer == "Yes") {
-									playGame2();
+									playPlanetaryAkinator();
 								}
 
 								if (answer == "No") {
@@ -475,7 +484,3 @@ void playGame2()
 		}
 	}
 }
-
-
-
-

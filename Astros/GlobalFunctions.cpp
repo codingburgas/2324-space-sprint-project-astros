@@ -1,5 +1,5 @@
 #include "GlobalFunctions.h"
-#include "Quiz1Functions.h"
+#include "AstronomyQuizFunctions.h"
 #include <iostream>
 #include <iomanip>
 #include <stdlib.h>
@@ -60,16 +60,16 @@ void centerText(string text) {
 }
 
 void Help(string GameName) {
-    if (GameName == "Game2") {
+    if (GameName == "PlanetaryAkinator") {
         centerText("Zlatine, zashto ne napisa pravilata?\n\n");
     }
-    else if (GameName == "Game3Decision") {
+    else if (GameName == "CosmicTriviaDecision") {
         centerText("Here, you decide whether or not you want to actually use this part of the programme.\n");
         centerText("Responding with Yes (Lowercase and Capital Y), will redirect you to the Celestial Body selector\n");
         centerText("Responding with No (Lowercase and Capital N), will redirect you to the Main menu\n");
         centerText("Alternatively, you could respond with Exit to stop the programme entiretly\n");
     }
-    else if (GameName == "Game3") {
+    else if (GameName == "CosmicTrivia") {
         centerText("Here, you select what Celsetial Body you'd like to hear facts about.\n");
         centerText("Possible answers include:\n\n");
         centerText("The Sun;\n");
@@ -95,7 +95,7 @@ void Help(string GameName) {
         centerText("Or simply type Exit to stop the programme;\n\n");
         centerText("If your answer doesn't fit in any of the beforementioned criteria, the programme will treat it as incoherent;\n\n");
     }
-    else if (GameName == "Game4") {
+    else if (GameName == "GuessTheWord") {
         centerText("Here, the programme prints out a word whose letters have been reordered in a way that makes it lack meaning\n");
         centerText("Your task is to rewrite the word the way it's originally meant to be written\n");
     }

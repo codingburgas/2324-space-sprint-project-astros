@@ -1,8 +1,10 @@
-#include "Game4.h"
+#include "GuessTheWord.h"
 #include "Menu.h"
-#include "WordsGame4.h"
+#include "WordsGuessTheWord.h"
 #include "GlobalFunctions.h"
 #include <iostream>
+#include <Windows.h>
+#include <conio.h>
 #include <string>
 #include <cstdlib> // For rand() and srand()
 #include <ctime>   // For time()
@@ -41,24 +43,24 @@ string toLowerCase(const string& input) {
     return output;
 }
 
-void PrintGame4Rules()
+void PrintGuessTheWordRules()
 {
     centerText("Here, the programme prints out a word whose letters are reordered in a way that makes it lose its meaning.Your task is to write the word the way it's originally meant to be written.\n\n");
 }
 
-void PrintGame4Header()
+void PrintGuessTheWordHeader()
 {
     centerText("GUESS THE WORD\n\n");
     centerText("Press Any Button To Continue\n");
     cin.get();
     clear();
     PrintLogo();
-    PrintGame4Rules();
+    PrintGuessTheWordRules();
 }
 
-void playGame4()
+void playGuessTheWord()
 {
-    PrintGame4Header();
+    PrintGuessTheWordHeader();
 
     // Seed the random number generator
     srand(time(0));
@@ -95,8 +97,8 @@ void playGame4()
             centerText("Correct!\n");
             score++;
         }
-        else if (guess == "help") {
-            Help("Game4");
+        else if (guess == "Help") {
+            Help("GuessTheWord");
         }
         else {
             //cout << "Wrong!<< endl;
@@ -107,7 +109,10 @@ void playGame4()
     }
     // Output the player's score
     //cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;//
-    centerText("Your score: " + to_string(score));
-    cin.get();
-    ShowMenu();
+    centerText("Your score: " + to_string(score) + "/" + to_string(SPACE_WORDS_COUNT) + "\n");
+    
+    char keyentered;
+    keyentered = _getch();
+    if (keyentered == 13) ShowMenu();
+    else ShowMenu();
 }

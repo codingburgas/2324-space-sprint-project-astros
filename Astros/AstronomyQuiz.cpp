@@ -1,8 +1,8 @@
 #include <iostream>
 #include "Menu.h"
-#include "Game1.h"
-#include "QuestionsGame1.h"
-#include "Quiz1Functions.h"
+#include "AstronomyQuiz.h"
+#include "QuestionsAstronomyQuiz.h"
+#include "AstronomyQuizFunctions.h"
 #include "GlobalFunctions.h"
 #include <string>
 using namespace std;

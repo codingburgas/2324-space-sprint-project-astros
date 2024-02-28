@@ -21,10 +21,10 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game1.cpp">
+    <ClCompile Include="AstronomyQuiz.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game2.cpp">
+    <ClCompile Include="PlanetaryAkinator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Generalfacts.cpp">
@@ -33,19 +33,19 @@
     <ClCompile Include="FactSheet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game3.cpp">
+    <ClCompile Include="CosmicTrivia.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Quiz1Functions.cpp">
+    <ClCompile Include="AstronomyQuizFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GlobalFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game2Functions.cpp">
+    <ClCompile Include="PlanetaryAkinatorFunctions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Game4.cpp">
+    <ClCompile Include="GuessTheWord.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,10 +53,10 @@
     <ClInclude Include="Menu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="QuestionsGame1.h">
+    <ClInclude Include="QuestionsAstronomyQuiz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game2.h">
+    <ClInclude Include="PlanetaryAkinator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Generalfacts.h">
@@ -65,22 +65,22 @@
     <ClInclude Include="FactSheet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game3.h">
+    <ClInclude Include="CosmicTrivia.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Quiz1Functions.h">
+    <ClInclude Include="AstronomyQuizFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game1.h">
+    <ClInclude Include="AstronomyQuiz.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GlobalFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Game4.h">
+    <ClInclude Include="GuessTheWord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WordsGame4.h">
+    <ClInclude Include="WordsGuessTheWord.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,15 +4,15 @@
 #include <conio.h>
 #include "Menu.h"
 #include "GlobalFunctions.h"
-#include "Game1.h"
-#include "Game2.h"
-#include "Game3.h"
-#include "Game4.h"
+#include "AstronomyQuiz.h"
+#include "PlanetaryAkinator.h"
+#include "CosmicTrivia.h"
+#include "GuessTheWord.h"
 using namespace std;
 bool firsttimerun = true; // Global variable for FullScreen.
 void ShowMenu()
 {
-	if (firsttimerun) FullScreen(); // Add Fullscreen
+	if (firsttimerun) FullScreen();  //Add Fullscreen
 	firsttimerun = false;
 	clear(); // Clear Screen
 	PrintLogo(); // Print Logo
@@ -56,15 +56,15 @@ void ShowMenu()
 				timetochoose = false;
 			}
 			else if (SelectedGame == 1) { // Play Game 2
-				playGame2();
+				playPlanetaryAkinator();
 				timetochoose = false;
 			}
 			else if (SelectedGame == 2) { // Play Game 3
-				playGame3();
+				playCosmicTrivia();
 				timetochoose = false;
 			}
 			else if (SelectedGame == 3) { // Play Game 4
-				playGame4();
+				playGuessTheWord();
 				timetochoose = false;
 			}
 			else if (SelectedGame == 4) timetochoose = false;
