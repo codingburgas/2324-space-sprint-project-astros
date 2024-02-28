@@ -18,14 +18,12 @@ void playPlanetaryAkinator()
 			centerText("PLANET AKINATOR\n"); //rules of the game and such
 			centerText("Press Any Button To Continue");
 			cin.get();
-			cin.ignore(numeric_limits<streamsize>::max(), '\n'); //clears buffer
 			clear();
 			PrintLogo();
 
 			centerText("PSA: Planet Akinator only takes planets in the Solar System into account. Pluto is not recognized as one of them. Yes or No answers only.\n");
 			centerText("Press Any Button To Begin");
-			cin.get(); //waits for user input before starting
-			cin.ignore(numeric_limits<streamsize>::max(), '\n'); //clears buffer
+			cin.get();
 			clear();
 			PrintLogo();
 

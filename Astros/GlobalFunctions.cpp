@@ -67,7 +67,12 @@ void leaveGame(){
 
 void Help(string GameName) {
     if (GameName == "PlanetaryAkinator") {
-        centerText("In the Planetary Akinator game, you simply respond with Yes or No, depending on the question that the game asks you.\n\n");
+          centerText("In the Planetary Akinator game, you simply respond with Yes or No, depending on the question that the game asks you. The game accepts Yes and No answers only and won't let you proceed otherwise.\n");
+          centerText("You can type leave at any time if you want to go back to the main menu.\n\n");
+          cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
+          cin.get();
+          clear();
+          PrintLogo();
     }
     else if (GameName == "CosmicTriviaDecision") {
         centerText("Here, you decide whether or not you want to actually use this part of the programme;\n");

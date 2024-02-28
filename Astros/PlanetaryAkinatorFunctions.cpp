@@ -96,14 +96,14 @@ void questionTwoInnerOuterPlanets(int& a, int& b, int& c, int& d) { //second var
 void inputCheckRegular(string& input, string text) {
     
     if (input == "leave" or input == "Leave") leaveGame(); //the input gets entered by the user before this function is called and this checked if that's the user asking to exit the game
-    while (input != "Yes" and input != "No" ) { //if the text is anything else than yes and no:
+    while (input != "Yes" and input != "No") { //if the text is anything else than yes and no:
         if (input == "help" or input == "Help") { //this checks if the user is asking for help or actually made a typo writing out yes or no
             clear(); //screen gets cleared from any previous visual clutter
             PrintLogo(); //logo gets printed
             Help("PlanetaryAkinator"); //help function gets called
-            centerText(text + "\n"); //prints out the question
+            centerText(text + "\n");
             cout << string((getConsoleWidth() / 2) - 5, ' '); //makes the cin appear in the middle of the screen
-            getline(cin, input); //the user can either type yes or no and proceed to the next question or ask for help again and have the menu show up a 2nd time (or 3rd and so on)
+            getline(cin, input);
         }
         else { //if the user made a typo they gets notified and are given the chance to re-enter whatever they wanted to type
             centerText("Invalid Answer! Please type either \"Yes\" or \"No\".\n");
