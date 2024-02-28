@@ -51,6 +51,7 @@ int getConsoleWidth() {
     return width;
 }
 
+//text centering
 void centerText(string text) {
     int consoleWidth = getConsoleWidth();
     int paddingLeft = (consoleWidth - text.length()) / 2;
@@ -59,6 +60,7 @@ void centerText(string text) {
     cout << string(paddingLeft, ' ') << text;
 }
 
+//help function
 void Help(string GameName) {
     if (GameName == "PlanetaryAkinator") {
         centerText("In the Planetary Akinator game, you simply respond with Yes or No, depending on the question that the game asks you.\n\n");
