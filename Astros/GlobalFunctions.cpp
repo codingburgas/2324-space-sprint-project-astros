@@ -6,7 +6,7 @@
 #include <string>
 #include <windows.h>	
 using namespace std;
-void PrintLogo() { //logo
+void PrintLogo() { //Logo
     cout << "\n\n\n";
     ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
     centerText(" .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. \n");
@@ -61,13 +61,13 @@ void centerText(string text) {
 
 void Help(string GameName) {
     if (GameName == "PlanetaryAkinator") {
-        centerText("Zlatine, zashto ne napisa pravilata?\n\n");
+        centerText("In the Planetary Akinator game, you simply respond with Yes or No, depending on the question that the game asks you.\n\n");
     }
     else if (GameName == "CosmicTriviaDecision") {
-        centerText("Here, you decide whether or not you want to actually use this part of the programme.\n");
-        centerText("Responding with Yes (Lowercase and Capital Y), will redirect you to the Celestial Body selector\n");
-        centerText("Responding with No (Lowercase and Capital N), will redirect you to the Main menu\n");
-        centerText("Alternatively, you could respond with Exit to stop the programme entiretly\n");
+        centerText("Here, you decide whether or not you want to actually use this part of the programme;\n");
+        centerText("Responding with Yes (Lowercase and Capital Y), will redirect you to the Celestial Body selector;\n");
+        centerText("Responding with No (Lowercase and Capital N), will redirect you to the Main menu;\n");
+        centerText("Alternatively, you could respond with Exit to stop the programme entiretly;\n");
     }
     else if (GameName == "CosmicTrivia") {
         centerText("Here, you select what Celsetial Body you'd like to hear facts about.\n");
@@ -88,12 +88,13 @@ void Help(string GameName) {
         centerText("Each Planet has about 50 facts corresponding to it;\n");
         centerText("Earth's moon has 15 facts corresponding to it;\n");
         centerText("The moons of Mars, Phobos and Deimos have 25 facts corresponding to them in total;\n");
-        centerText("The rest of the majre moons have a varying number of facts corresponding to them;\n\n");
+        centerText("The rest of the majîr moons have a varying number of facts corresponding to them;\n\n");
         centerText("Every time a Celestial Body is called upon, 5 facts about it are printed;\n");
         centerText("Exception to this rule are the moons of the more remote planets of the Solar system;\n\n");
-        centerText("Alternatively, you could respond with None to be redirected back to the Menu;\n");
-        centerText("Or simply type Exit to stop the programme;\n\n");
-        centerText("If your answer doesn't fit in any of the beforementioned criteria, the programme will treat it as incoherent;\n\n");
+        centerText("Alternatively, you could type Exit to stop the programme;\n\n");
+        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 4);
+        centerText("If your answer isn't related to any of the beforementioned possible answers, the programme will treat it as incoherent!\n\n");
+        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     }
     else if (GameName == "GuessTheWord") {
         centerText("Here, the programme prints out a word whose letters have been reordered in a way that makes it lack meaning\n");

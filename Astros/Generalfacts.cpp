@@ -1,4 +1,6 @@
 #include <iostream>
+#include <Windows.h>
+#include <conio.h>
 #include <string>
 #include "Menu.h"
 #include "FactSheet.h"
@@ -13,9 +15,6 @@ void PrintIntro() {
 	// I used Zlatin's function of centerText() to add a better look to my "Game"'s Intro function //
 	cin.get();
 	clear();
-	PrintLogo();
-	centerText("Welcome to the Astros cosmic trivia machine!\n");
-	centerText("Here, you will be greeted with facts about the celestial bodies of our solar system.\n\n");
 }
 
 // This function right here is responsible for marking out similarities (also called coincidences) between the given answer (Line 90) and all possible answers (line 43) //
@@ -38,7 +37,7 @@ void AnswerCorrect(string &answ, bool &moon) { // <-- The given answer (Lines 11
 	const int standard = 47; // The number of possible answers is set to a constant standard as it is a subject to change //
 	
 	int PosCon[standard]; // "PosCon" as in Possible Coincidences //
-	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Mars", "Phobos", "Deimos", "Mars/Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter/Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn/Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus/Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune/Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto/Moons", "Kuiper Belt", "Exit", "None", "Help"};
+	string PosAnsw[standard] = {"The Sun", "Mercury", "Venus", "The Earth", "The Moon", "Mars", "Phobos", "Deimos", "Mars Moons", "Asteroid Belt", "Jupiter", "Io", "Europa", "Ganymede", "Callisto", "Jupiter Moons", "Saturn", "Titan", "Rhea", "Iapetus", "Tethys", "Enceladus", "Dione", "Saturn Moons", "Uranus", "Titania", "Oberon", "Umbriel", "Ariel", "Miranda", "Uranus Moons", "Neptune", "Triton", "Proteus", "Nereid", "Neptune Moons", "Pluto", "Nix", "Hydra", "Charon", "Styx", "Kerberos", "Pluto Moons", "Kuiper Belt", "Exit", "None", "Help"};
 	// "PosAnsw" as in Possible Answers //
 	
 	// This loop, with the help of the "AnswerCheck()" function marks out all coincidences between the given answer and all possible answers //
@@ -141,24 +140,68 @@ void AnswerInit() {
 	}
 }
 
-// This function basically "decides" whether or not you proceed wtih Game 3. If you choose 'No', it redirects you back to the starting menu... //
+// This function basically "decides" whether or not you proceed to use the fact printer. If you choose 'No', it redirects you back to the starting menu... //
 void YourDecision() {
-	centerText("Are you ready to learn?\n");
-	string decision;
-	
-	cout << string((getConsoleWidth() / 2) - 5, ' ');
-	getline(cin, decision, '\n');
-	if (decision == "Yes" or decision == "yes") AnswerInit(); // ... if you choose 'Yes' however, your will be redirected to the answer-distributing funcion "AnswerInit()" //
-	else 
-		if (decision == "No" or decision == "no")
-		{
-			
+	int YourDecision = 1;
+	while (true) {
+		clear();
+		PrintLogo();
+		centerText("Welcome to the Astros cosmic trivia machine!\n");
+		centerText("Here, you will be greeted with facts about the celestial bodies of the Solar system.\n\n");
+		centerText("Are you ready to learn?\n\n");
+		if (YourDecision == 1) {
+			cout << string(((getConsoleWidth() - 21) / 2), ' ');
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+			cout << char(205) << " Yes " << char(205);
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			cout << "          No  \n\n";
+			centerText("Exit");
+			cout << "\n\n";
 		}
-	else if (decision == "Help") Help("CosmicTriviaDecision");
-	else {
-		//cout << decision << "? Could you please give us a valid answer?" << endl;//
-		centerText(decision + "? Could you give us a valid answer? \n");
-		YourDecision();
+		else if (YourDecision == 2) {
+			cout << string(((getConsoleWidth() - 21) / 2), ' ');
+			cout << "  Yes          ";
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+			cout << char(205) << " No " << char(205) << "\n\n";
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			centerText("Exit");
+			cout << "\n\n";
+		}
+		else if (YourDecision == 3) {
+			centerText("Yes            No");
+			cout << "\n\n";
+			cout << string(((getConsoleWidth() - 8) / 2), ' ');
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+			cout << char(205) << " Exit " << char(205);
+			ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+			cout << "\n\n";
+		}
+
+		char key = _getch();
+		if (key == 72 or key == 80) {
+			if (YourDecision == 3) YourDecision = 1;
+			else if (YourDecision == 1 or YourDecision == 2) YourDecision = 3;
+		}
+		if (key == 75) {
+			if (YourDecision == 2 or YourDecision == 3) YourDecision = 1;
+			else if (YourDecision == 1) YourDecision = 2;
+		}
+		if (key == 77) {
+			if (YourDecision == 1 or YourDecision == 3) YourDecision = 2;
+			else if (YourDecision == 2) YourDecision = 1;
+		}
+		if (key == 13) {
+			if (YourDecision == 1) {
+				AnswerInit();
+				break;
+			}
+			if (YourDecision == 2) {
+				ShowMenu();
+				break;
+			}
+			if (YourDecision == 3) {
+				break;
+			}
+		}
 	}
-	// But if you enter an invalid answer, the programme will question it and ask you to give a valid one //
 }

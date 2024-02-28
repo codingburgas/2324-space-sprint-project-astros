@@ -73,16 +73,15 @@ void ShowMenu()
 }
 
 void PrintMenuOption(string Option) { // This function print out the menu options separately
-	int Padding = (getConsoleWidth() - 38) / 2;
-	cout << string(Padding, ' ') << char(201);
+	cout << string((getConsoleWidth() - 38) / 2, ' ') << char(201);
 	for (int i = 0; i < 36; i++) {
 		cout << char(205);
 	}
 	cout << char(187) << endl;
-	cout << string(Padding, ' ') << char(186) << string(36, ' ') << char(186) << endl;
-	cout << string(Padding, ' ') << char(186) << Option << char(186) << endl;
-	cout << string(Padding, ' ') << char(186) << string(36, ' ') << char(186) << endl;
-	cout << string(Padding, ' ') << char(200);
+	cout << string((getConsoleWidth() - 38) / 2, ' ') << char(186) << string(36, ' ') << char(186) << endl;
+	cout << string((getConsoleWidth() - 38) / 2, ' ') << char(186) << Option << char(186) << endl;
+	cout << string((getConsoleWidth() - 38) / 2, ' ') << char(186) << string(36, ' ') << char(186) << endl;
+	cout << string((getConsoleWidth() - 38) / 2, ' ') << char(200);
 	for (int i = 0; i < 36; i++) {
 		cout << char(205);
 	}

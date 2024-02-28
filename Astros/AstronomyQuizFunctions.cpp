@@ -77,15 +77,16 @@ int makeQuiz()
             for (int j = 0; j < 5; j++) {
                 if (j == 4) {
                     if (SelectedOption == j) {
-                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
                         if (jokersUsed < 3) {
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
                             centerText("Use a Hint " + to_string(jokersUsed) + "/3" "\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
                         else {
-
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 13);
                             centerText("No more Hints!\n");
+                            ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                         }
-                        ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
                     }
                     else {
                         if (jokersUsed < 3) {

@@ -10,5 +10,4 @@ void playCosmicTrivia()
 {
 	PrintIntro();
 	YourDecision();
-	ShowMenu();
 }
