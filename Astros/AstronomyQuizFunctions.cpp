@@ -134,7 +134,7 @@ int makeQuiz()
                 if (SelectedOption + 1 > 5) SelectedOption = 0;
                 else SelectedOption += 1;
             }
-            else if (key == 88 or key == 120) {
+            else if (key == 88 or key == 120) { // x and X for returning to the Main menu
                 return 0;
             }
             else if (key == 13) { //enter

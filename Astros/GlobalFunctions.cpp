@@ -8,7 +8,7 @@
 using namespace std;
 void PrintLogo() { //Logo
     cout << "\n\n\n";
-    ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3);
+    ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 3); // ChangeColor() function in use
     centerText(" .----------------.  .----------------.  .----------------.  .----------------.  .----------------.  .----------------. \n");
     centerText(" | .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |\n");
     centerText("| |      __      | || |    _______   | || |  _________   | || |  _______     | || |     ____     | || |    _______   | |\n");
@@ -24,7 +24,7 @@ void PrintLogo() { //Logo
     cout << "\n\n\n";
 }
 
-void FullScreen() {
+void FullScreen() { // This function is used to fullscreen the programme. The centerText() function is entirely reliant on it, given the fact that it needs the width of the console, which is influenced by the resolution
     keybd_event(VK_MENU, 0x36, 0, 0);
     keybd_event(VK_RETURN, 0x1c, 0, 0);
     keybd_event(VK_RETURN, 0x1c, KEYEVENTF_KEYUP, 0);
@@ -51,7 +51,7 @@ int getConsoleWidth() {
     return width;
 }
 
-void centerText(string text) {
+void centerText(string text) { // The centerText() function does not adapt in real time and needs contextual adjustments
     int consoleWidth = getConsoleWidth();
     int paddingLeft = (consoleWidth - text.length()) / 2;
     if (paddingLeft < 0) paddingLeft = 0;
@@ -59,7 +59,7 @@ void centerText(string text) {
     cout << string(paddingLeft, ' ') << text;
 }
 
-void Help(string GameName) {
+void Help(string GameName) { // The Help function, which if called upon prints a set of guiding messages to the user
     if (GameName == "PlanetaryAkinator") {
         centerText("In the Planetary Akinator game, you simply respond with Yes or No, depending on the question that the game asks you.\n\n");
     }
@@ -102,6 +102,6 @@ void Help(string GameName) {
     }
 }
 
-void ChangeColor(HANDLE Output, int Color) {
+void ChangeColor(HANDLE Output, int Color) { // Basically a simplified version of SetConsoleTextAtrribute() to change color
     SetConsoleTextAttribute(Output, Color);
 }
