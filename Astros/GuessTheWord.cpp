@@ -60,6 +60,8 @@ void PrintGuessTheWordHeader()
 
 void playGuessTheWord()
 {
+    clear();
+    PrintLogo();
     PrintGuessTheWordHeader();
 
     // Seed the random number generator
@@ -86,10 +88,22 @@ void playGuessTheWord()
         string guess;
         
         cout << string((getConsoleWidth() / 2) - 5, ' '); //Center the output
-        cin >> guess;
+        getline(cin, guess); 
         guess = toLowerCase(guess);
 
         // Check if the guess is correct (case-insensitively)
+        if (guess == "help") {
+            Help("GuessTheWord");
+            centerText("Guess the word: " + shuffledWords[i] + '\n');
+            cout << string((getConsoleWidth() / 2) - 5, ' '); //Center the output
+            getline(cin, guess);
+        }
+        if (guess == "leave") {
+            ShowMenu();
+            exit(0);
+        }
+
+
         if (guess == toLowerCase(SPACE_WORDS[i])) {
             //cout << "Correct!" << endl;//
             clear();
@@ -97,15 +111,14 @@ void playGuessTheWord()
             centerText("Correct!\n");
             score++;
         }
-        else if (guess == "Help") {
-            Help("GuessTheWord");
-        }
+        
         else {
             //cout << "Wrong!<< endl;
             clear();
             PrintLogo();
             centerText("Wrong!\n");
         }
+        
     }
     // Output the player's score
     //cout << "Your score: " << score << "/" << SPACE_WORDS_COUNT << endl;//

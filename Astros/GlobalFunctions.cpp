@@ -25,12 +25,12 @@ void PrintLogo() { //Logo
     cout << "\n\n\n";
 }
 
-void FullScreen() { // This function is used to fullscreen the programme. The centerText() function is entirely reliant on it, given the fact that it needs the width of the console, which is influenced by the resolution
+void FullScreen() { // This function is used to fullscreen the program. The centerText() function is entirely reliant on it, given the fact that it needs the width of the console, which is influenced by the resolution
     keybd_event(VK_MENU, 0x36, 0, 0);
     keybd_event(VK_RETURN, 0x1c, 0, 0);
     keybd_event(VK_RETURN, 0x1c, KEYEVENTF_KEYUP, 0);
     keybd_event(VK_MENU, 0x38, KEYEVENTF_KEYUP, 0);
-    cout << "Note: If you need help with the programme, type \"Help\" where possible.\n";
+    cout << "Note: If you need help with the program, type \"Help\" where possible.\n";
     system("pause");
 }
 
@@ -75,10 +75,10 @@ void Help(string GameName) {
           PrintLogo();
     }
     else if (GameName == "CosmicTriviaDecision") {
-        centerText("Here, you decide whether or not you want to actually use this part of the programme;\n");
+        centerText("Here, you decide whether or not you want to actually use this part of the program;\n");
         centerText("Responding with Yes (Lowercase and Capital Y), will redirect you to the Celestial Body selector;\n");
         centerText("Responding with No (Lowercase and Capital N), will redirect you to the Main menu;\n");
-        centerText("Alternatively, you could respond with Exit to stop the programme entiretly;\n");
+        centerText("Alternatively, you could respond with Exit to stop the program entiretly;\n");
     }
     else if (GameName == "CosmicTrivia") {
         centerText("Here, you select what Celsetial Body you'd like to hear facts about.\n");
@@ -102,13 +102,15 @@ void Help(string GameName) {
         centerText("The rest of the majîr moons have a varying number of facts corresponding to them;\n\n");
         centerText("Every time a Celestial Body is called upon, 5 facts about it are printed;\n");
         centerText("Exception to this rule are the moons of the more remote planets of the Solar system;\n\n");
-        centerText("Alternatively, you could type Exit to stop the programme;\n\n");
+        centerText("Alternatively, you could type Exit to stop the program;\n\n");
         ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 4);
-        centerText("If your answer isn't related to any of the beforementioned possible answers, the programme will treat it as incoherent!\n\n");
+        centerText("If your answer isn't related to any of the beforementioned possible answers, the program will treat it as incoherent!\n\n");
         ChangeColor(GetStdHandle(STD_OUTPUT_HANDLE), 7);
     }
     else if (GameName == "GuessTheWord") {
-        centerText("Here, the programme prints out a word whose letters have been reordered in a way that makes it lack meaning\n");
+        clear();
+        PrintLogo();
+        centerText("Here, the program prints out a word whose letters have been reordered in a way that makes it lack meaning\n");
         centerText("Your task is to rewrite the word the way it's originally meant to be written\n");
     }
 }
